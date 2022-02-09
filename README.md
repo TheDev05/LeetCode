@@ -6,7 +6,7 @@ Daily data of my practices on DSA, This is for self-motivation to do more every 
   
 | # | Total Questions | Question Topic | Platform | Remark
 | --- | --- | --- | --- | --- |
-| Day01 |  | Reccursion |  |  | Today was great
+| Day01 |  | Reccursion |  | Today was great!
  
 </details>
 
