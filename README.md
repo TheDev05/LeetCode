@@ -2,7 +2,10 @@
 Daily data of my practices on DSA, This is for self-motivation to do more every next day & ofcourse for a great consistency, Love & Peace!
 
 <details>
-  <summary>Data Structure & Algo</summary>
+ <summary>Data Structure & Algo</summary
+   
+ <br></br>
+ <b> Starting date: FEB.13.22 </b>
   
 | # | Total Questions | Question Topic | Platform | Qn Level | Remark
 | --- | --- | --- | --- | --- | --- |
