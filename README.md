@@ -4,9 +4,9 @@ Daily data of my practices on DSA, This is for self-motivation to do more every 
 <details>
   <summary>Data Structure & Algo</summary>
   
-| # | Total Questions | Question Topic | Platform | Remark
-| --- | --- | --- | --- | --- |
-| Day01 |  | Reccursion |  | Today was great!
+| # | Total Questions | Question Topic | Platform | Qn Level | Remark
+| --- | --- | --- | --- | --- | --- |
+| Day01 | 06 | Array | Leetcode | 3E, 2M, 1H | Today was great!
  
 </details>
 
