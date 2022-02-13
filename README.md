@@ -9,7 +9,7 @@ Daily data of my practices on DSA, This is for self-motivation to do more every 
   
 | # | Total Questions | Question Topic | Platform | Qn Level | Remark
 | --- | --- | --- | --- | --- | --- |
-| Day01 | 06 | Array | Leetcode | 3E, 2M, 1H | Today was great!
+| Day01 | 06 | Array | Leetcode | 3E, 2M | Today was great!
  
 </details>
 
