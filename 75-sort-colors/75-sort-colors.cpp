@@ -3,8 +3,8 @@ class Solution
 public:
     void sortColors(vector<int> &nums)
     {
-        int n = nums.size();
-        map<int, int> data;
+        long long n = nums.size();
+        map<long long, long long> data;
 
         for (int i = 0; i < n; i++)
         {
