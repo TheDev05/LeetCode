@@ -5,14 +5,23 @@ public:
         int n=matrix.size();
         int m=matrix[0].size();
         
-        int i=0,j=m-1;
-        while(i<n && j>=0)
+        int left=0;
+        int right=(n*m)-1;
+        
+        while(left<=right)
         {
-            if(matrix[i][j]==target)
+            int mid=left+(right-left)/2;
+            if(matrix[mid/m][mid%m]==target)
                 return(true);
-            else if(matrix[i][j]>target)
-                j--;
-            else i++;
+            else if(matrix[mid/m][mid%m]>target)
+            {
+                if((mid/m==0) && (mid%m==0))return(false);
+                else right=mid-1;
+            }
+            else {
+                if((mid/m==n-1) && (mid%m==m-1))return(false);
+                else left=mid+1;
+            }
         }
         
         return(false);
