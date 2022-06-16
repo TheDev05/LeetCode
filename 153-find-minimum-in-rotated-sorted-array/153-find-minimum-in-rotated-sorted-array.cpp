@@ -4,9 +4,7 @@ public:
         
         
         int n=nums.size();
-        
         if(n==1)return(nums[0]);
-        if(nums[0]<nums[n-1])return(nums[0]);
 
         
         int l=0;
