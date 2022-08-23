@@ -2,32 +2,40 @@ class Solution {
 public:
     int maxArea(vector<int>& height) {
         
-        vector<int>num;
-        num=height;
-        
-        int max = INT_MIN,n=num.size();
- 	   for (int i = 0; i < n; i++)
-	   {
-		for (int j = 0; j < i; j++)
-		{
-			if (num[j] >= num[i])
-			{
-				max = std::max(max, (i - j) * num[i]);
-				break;
-			}
-		}
+    int n=height.size();
+    vector<pair<int, int>> num(n);
 
-		for (int k = n - 1; k > i; k--)
-		{
-			if (num[k] >= num[i])
-			{
-				max = std::max(max, (k - i) * num[i]);
-				break;
-			}
-		}
+	map<int, set<int>> res;
+	set<int> data;
+
+	for (int i = 0; i < n; i++)
+	{
+        num[i].first=height[i];
+
+		num[i].second = i;
+		data.insert(i);
 	}
-       
-        return(max);
-        
+
+	sort(num.begin(), num.end());
+
+	int max = INT_MIN;
+	for (int i = 0; i < n - 1; i++)
+	{
+		int index = num[i].second;
+		data.erase(index);
+
+		int it1 = *(data.begin());
+		auto temp = data.end();
+		temp--;
+
+		int it2 = *(temp);
+
+		int val1 = abs(it1 - index) * num[i].first;
+		int val2 = abs(it2 - index) * num[i].first;
+
+		max = std::max(max, std::max(val1, val2));
+	}
+
+      return(max);
     }
 };
