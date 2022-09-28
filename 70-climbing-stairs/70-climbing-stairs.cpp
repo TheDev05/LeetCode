@@ -1,30 +1,3 @@
-
-int fun(int n, int dp[])
-{
-     if (n == 0)
-    {
-        return (1);
-    }
-    
-     if (dp[n] != -1)
-        return (dp[n]);
-
-    int move1 = 0;
-    int move2 = 0;
-
-    if (n - 1 >= 0)
-    {
-        move1 = fun(n - 1, dp);
-    }
-
-    if (n - 2 >= 0)
-    {
-        move2 = fun(n - 2, dp);
-    }
-
-    return (dp[n] = move1 + move2);
-}
-
 class Solution
 {
 public:
@@ -33,6 +6,15 @@ public:
         int dp[n + 1];
         memset(dp, -1, sizeof(dp));
 
-        return (fun(n, dp));
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        // std::cout << dp[n] << '\n';
+        return (dp[n]);
     }
 };
