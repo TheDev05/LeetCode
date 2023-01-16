@@ -1,25 +1,27 @@
 class Solution {
 public:
-    int getCount(std::vector<std::vector<int>> &num, std::vector<std::vector<int>> &storage, int i, int j)
-{
-    if (i >= num.size() || j >= num[0].size())
-        return INT_MAX;
-    if (i == num.size() - 1 && j == num[0].size() - 1)
-        return num[i][j];
+    int minPathSum(vector<vector<int>>& num) {
+        
+    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(num[0].size(), -1));
+    storage[num.size() - 1][num[0].size() - 1] = num[num.size() - 1][num[0].size() - 1];
 
-    if (storage[i][j] == -1)
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        int right = getCount(num, storage, i, j + 1);
-        int down = getCount(num, storage, i + 1, j);
+        for (int j = num[0].size() - 1; j >= 0; j--)
+        {
+            if (i == num.size() - 1 && j == num[0].size() - 1)
+                continue;
+            int down = INT_MAX, right = INT_MAX;
 
-        storage[i][j] = std::min(right, down) + num[i][j];
+            if (i != num.size() - 1)
+                down = storage[i + 1][j];
+            if (j != num[0].size() - 1)
+                right = storage[i][j + 1];
+
+            storage[i][j] = std::min(right, down) + num[i][j];
+        }
     }
 
-    return storage[i][j];
-}
-
-    int minPathSum(vector<vector<int>>& num) {
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(num[0].size(), -1));
-    return getCount(num, storage, 0, 0);
+     return storage[0][0];
     }
 };
