@@ -18,25 +18,23 @@ public:
         sum = (total - k) / 2;
     }else return 0;
 
-    std::vector<int> prev(sum + 1, 0), curr(sum + 1, 0);
+    std::vector<int> prev(sum + 1, 0);
     prev[0] = 1;
 
     for (int i = num.size() - 1; i >= 0; i--)
     {
-        for (int j = 0; j < prev.size(); j++)
+        for (int j = prev.size()-1; j >= 0; j--)
         {
             int val1 = 0, val2 = 0;
             if (j - num[i] >= 0)
                 val1 = prev[j - num[i]];
             val2 = prev[j];
 
-            curr[j] = val1 + val2;
+            prev[j] = val1 + val2;
         }
-
-        prev = curr;
     }
 
-    return curr[sum];
+    return prev[sum];
         
     }
 };
