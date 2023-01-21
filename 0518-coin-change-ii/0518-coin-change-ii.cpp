@@ -2,21 +2,22 @@ class Solution {
 public:
 
     int change(int k, vector<int>& num) {
-    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(k + 1, 0));
-    storage[storage.size() - 1][0] = 1;
-    for (int i = storage.size() - 2; i >= 0; i--)
+    std::vector<int> prev(k + 1, 0);
+    prev[0] = 1;
+
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        for (int j = 0; j < storage[0].size(); j++)
+        for (int j = 0; j < prev.size(); j++)
         {
             int val1 = 0, val2 = 0;
             if (j - num[i] >= 0)
-                val1 = storage[i][j - num[i]];
-            val2 = storage[i + 1][j];
+                val1 = prev[j - num[i]];
+            val2 = prev[j];
 
-            storage[i][j] = val1 + val2;
+            prev[j] = val1 + val2;
         }
     }
 
-      return storage[0][k];
+    return prev[k];
     }
 };
