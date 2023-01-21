@@ -1,26 +1,22 @@
 class Solution {
 public:
-    
-int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int k, int index)
-{
-    if (index >= num.size())
-        return (k == 0) ? 1 : 0;
-
-    if (storage[index][k] == -1)
-    {
-        int val1 = 0, val2 = 0;
-        if (k - num[index] >= 0)
-            val1 = getCount(num, storage, k - num[index], index);
-        val2 = getCount(num, storage, k, index + 1);
-
-        storage[index][k] = val1 + val2;
-    }
-
-    return storage[index][k];
-}
 
     int change(int k, vector<int>& num) {
-       std::vector<std::vector<int>> storage(num.size(), std::vector<int>(k + 1, -1));
-    return getCount(num, storage, k, 0);
+    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(k + 1, 0));
+    storage[storage.size() - 1][0] = 1;
+    for (int i = storage.size() - 2; i >= 0; i--)
+    {
+        for (int j = 0; j < storage[0].size(); j++)
+        {
+            int val1 = 0, val2 = 0;
+            if (j - num[i] >= 0)
+                val1 = storage[i][j - num[i]];
+            val2 = storage[i + 1][j];
+
+            storage[i][j] = val1 + val2;
+        }
+    }
+
+      return storage[0][k];
     }
 };
