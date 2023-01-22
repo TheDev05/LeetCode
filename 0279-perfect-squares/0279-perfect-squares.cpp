@@ -10,23 +10,23 @@ public:
             num.push_back(i);
     }
 
-    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(n + 1, 1e7));
-    storage[storage.size() - 1][0] = 0;
-
-    for (int i = storage.size() - 2; i >= 0; i--)
+    std::vector<int> prev(n + 1, 1e7);
+    prev[0] = 0;
+    
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        for (int j = 0; j < storage[0].size(); j++)
+        for (int j = 0; j < prev.size(); j++)
         {
             int val1 = 1e7, val2 = 1e7;
             if (j - num[i] >= 0)
-                val1 = 1 + storage[i][j - num[i]];
-            val2 = storage[i + 1][j];
+                val1 = 1 + prev[j - num[i]];
+            val2 = prev[j];
 
-            storage[i][j] = std::min(val1, val2);
+            prev[j] = std::min(val1, val2);
         }
     }
 
-    return storage[0][n];
+    return prev[n];
         
     }
 };
