@@ -45,8 +45,8 @@ int getCount(std::string &text1, std::string &text2, std::vector<std::vector<int
    
     bool isMatch(string text2, string text1) {
         
-   if(text1.size() == 0 && text2.size() == 0) return 1;
-   if(text1.size() == 0) return 0;
+   // if(text1.size() == 0 && text2.size() == 0) return 1;
+   // if(text1.size() == 0) return 0;
         
      std::vector<std::vector<int>> storage(text1.size(), std::vector<int>(text2.size(), -1));
     return getCount(text1, text2,storage, false, 0, 0);
