@@ -1,38 +1,38 @@
 class Solution {
 public:
-    int getCount(std::vector<int> &num, std::vector<std::vector<std::vector<int>>> &storage, bool buy, int k, int index)
-{
-    if (index >= num.size())
-        return 0;
-
-    if (storage[index][buy][k] == -1)
+   
+    int maxProfit(int k, vector<int>& num) {
+    std::vector<std::vector<int>> prev(2, std::vector<int>(k + 1, 0)), curr(2, std::vector<int>(k + 1, 0));
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        if (buy)
+        for (int j = 0; j < 2; j++)
         {
-            int val1 = 0, val2 = 0;
-            if (k > 0)
-                val1 = getCount(num, storage, 0, k - 1, index + 1) - num[index];
-            val2 = getCount(num, storage, buy, k, index + 1);
+            for (int p = 0; p < k + 1; p++)
+            {
+                if (j)
+                {
+                    int val1 = 0, val2 = 0;
+                    if (p > 0)
+                        val1 = prev[0][p - 1] - num[i];
+                    val2 = prev[j][p];
 
-            storage[index][buy][k] = std::max(val1, val2);
-        }
-        else
-        {
-            int val1 = 0, val2 = 0;
-            val1 = num[index] + getCount(num, storage, 1, k, index + 1);
-            val2 = getCount(num, storage, buy, k, index + 1);
+                    curr[j][p] = std::max(val1, val2);
+                }
+                else
+                {
+                    int val1 = 0, val2 = 0;
+                    val1 = num[i] + prev[1][p];
+                    val2 = prev[j][p];
 
-            storage[index][buy][k] = std::max(val1, val2);
+                    curr[j][p] = std::max(val1, val2);
+                }
+            }
         }
+
+        prev = curr;
     }
 
-    return storage[index][buy][k];
-}
-
-    
-    int maxProfit(int k, vector<int>& num) {
-    std::vector<std::vector<std::vector<int>>> storage(num.size(), std::vector<std::vector<int>>(2, std::vector<int>(k + 1, -1)));
+    return curr[1][k];
         
-    return getCount(num, storage, 1, k, 0);
     }
 };
