@@ -6,26 +6,30 @@ public:
     {
         num.push_back({num2[i], num1[i]});
     }
-        
+
     sort(num.begin(), num.end());
-        
-    std::vector<int> prev(num.size() + 1, 0), curr(num.size() + 1, 0);
-    for (int i = num.size() - 1; i >= 0; i--)
+    std::vector<int> storage(num.size(), 0);
+
+    for (int i = 0; i < num.size(); i++)
     {
-        for (int j = prev.size() - 2; j >= 0; j--)
-        {
-            int val1 = 0, val2 = 0;
-            if (j == 0 || num[i].second >= num[j - 1].second)
-                val1 = num[i].second + prev[i + 1];
-            val2 = prev[j];
-
-            curr[j] = std::max(val1, val2);
-        }
-
-        prev = curr;
+        storage[i] = num[i].second;
     }
 
-    return curr[0];
+    int result = 0;
+    for (int i = 0; i < num.size(); i++)
+    {
+        int max = 0;
+        for (int j = i - 1; j >= 0; j--)
+        {
+            if (num[j].second <= num[i].second)
+                max = std::max(max, storage[j]);
+        }
+
+        storage[i] = num[i].second + max;
+        result = std::max(storage[i], result);
+    }
+
+    return result;
         
     }
 };
