@@ -1,27 +1,20 @@
 class Solution {
 public:
-int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int prevIndex, int index)
-{
-    if (index >= num.size())
-        return 0;
-
-    if (storage[index][prevIndex] == -1)
+    int lengthOfLIS(vector<int>& num) {
+    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(num.size() + 1, 0));
+    for (int i = storage.size() - 2; i >= 0; i--)
     {
-        int val1 = 0, val2 = 0;
-        if (prevIndex == 0 || num[index] > num[prevIndex - 1])
-            val1 = 1 + getCount(num, storage, index + 1, index + 1);
-        val2 = getCount(num, storage, prevIndex, index + 1);
+        for (int j = 0; j < num.size(); j++)
+        {
+            int val1 = 0, val2 = 0;
+            if (j == 0 || num[i] > num[j - 1])
+                val1 = 1 + storage[i + 1][i + 1];
+            val2 = storage[i + 1][j];
 
-        storage[index][prevIndex] = std::max(val1, val2);
+            storage[i][j] = std::max(val1, val2);
+        }
     }
 
-    return storage[index][prevIndex];
-}
-
-    int lengthOfLIS(vector<int>& num) {
-        
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(num.size(), -1));
-    return getCount(num, storage, 0, 0);
-        
+    return storage[0][0];
     }
 };
