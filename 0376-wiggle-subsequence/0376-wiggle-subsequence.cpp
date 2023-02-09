@@ -1,37 +1,33 @@
 class Solution {
 public:
-int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int pos, int index)
-{
-    if (index >= num.size())
-        return 0;
-
-    if (storage[index][pos] == -1)
+   
+    int wiggleMaxLength(vector<int>& num) {
+        
+    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(2, 0));
+    for (int i = storage.size() - 2; i >= 0; i--)
     {
-        int val = 0;
-        for (int i = index + 1; i < num.size(); i++)
+        for (int j = 0; j < 2; j++)
         {
-            int ok = 0;
-            if (num[i] - num[index] > 0)
-                ok = 1;
-            else if (num[i] - num[index] < 0)
-                ok = 0;
-            else
-                continue;
+            int val = 0;
+            for (int k = i + 1; k < num.size(); k++)
+            {
+                int ok = 0;
+                if (num[k] - num[i] > 0)
+                    ok = 1;
+                else if (num[k] - num[i] < 0)
+                    ok = 0;
+                else
+                    continue;
 
-            if (index == 0 || pos != ok)
-                val = std::max(val, getCount(num, storage, ok, i));
+                if (i == 0 || j != ok)
+                    val = std::max(val, storage[k][ok]);
+            }
+
+            storage[i][j] = 1 + val;
         }
-
-        storage[index][pos] = 1 + val;
     }
 
-    return storage[index][pos];
-}
-
-    
-    int wiggleMaxLength(vector<int>& num) {
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(2, -1));
-    return getCount(num, storage, 1, 0);
-
+    return storage[0][1];
+        
     }
 };
