@@ -11,40 +11,39 @@
  */
 class Solution {
 public:
-void Levelorder(std::vector<std::vector<int>> &num, TreeNode *root)
+void Levelorder(TreeNode *root, std::vector<std::vector<int>> &num)
 {
     if (root == NULL)
         return;
-    
-    std::queue<TreeNode *> q;
-    q.push(root);
 
-    while (q.size())
+    std::queue<TreeNode *> storage;
+    storage.push(root);
+
+    while (storage.size())
     {
         std::vector<int> temp;
-        int total = q.size();
-
-        for (int i = 0; i < total; i++)
+        int size = storage.size();
+        
+        for (int i = 0; i < size; i++)
         {
-            TreeNode *node = q.front();
-            q.pop();
+            TreeNode *local = storage.front();
+            storage.pop();
 
-            if (node->left != NULL)
-                q.push(node->left);
-            if (node->right != NULL)
-                q.push(node->right);
+            if (local->left != NULL)
+                storage.push(local->left);
+            if (local->right != NULL)
+                storage.push(local->right);
 
-            temp.push_back(node->val);
+            temp.push_back(local->val);
         }
 
         num.push_back(temp);
     }
 }
-
     vector<vector<int>> levelOrder(TreeNode* root) {
     std::vector<std::vector<int>> num;
-    Levelorder(num, root);
-        
+    Levelorder(root, num);
+    
     return num;
     }
 };
