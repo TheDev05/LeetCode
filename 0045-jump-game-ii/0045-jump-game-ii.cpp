@@ -1,31 +1,25 @@
 class Solution {
 public:
-int getCount(std::vector<int> &num, std::vector<int> &storage, int index)
-{
-    if (index == num.size() - 1)
-        return 0;
-
-    if (storage[index] == -1)
+ 
+    int jump(vector<int>& num) {
+    std::vector<int> storage(num.size(), 0);
+    for (int i = num.size() - 2; i >= 0; i--)
     {
         int val = 1e5;
-        for (int i = 1; i <= num[index]; i++)
+        for (int j = 1; j <= num[i]; j++)
         {
-            if (index + i < num.size())
+            if (i + j < num.size())
             {
-                val = std::min(val, getCount(num, storage, index + i));
+                val = std::min(val, storage[i+j]);
             }
             else
                 break;
         }
 
-        storage[index] = 1 + val;
+        storage[i] = 1 + val;
     }
 
-    return storage[index];
-}  
-    int jump(vector<int>& num) {
-    std::vector<int> storage(num.size(), -1);
-    return getCount(num, storage, 0);  
+    return storage[0]; 
         
     }
 };
