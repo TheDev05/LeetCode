@@ -1,32 +1,31 @@
 class Solution {
 public:
-    bool canPartition(vector<int>& num) {
-        
-    int sum = 0;
-    for (auto i : num)
-        sum += i;
+int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int sum, int total, int index)
+{
+    if (index >= num.size())
+        return (sum == (total - sum) ? 1 : 0);
 
-    if (sum & 1)
-        return false;
-    sum = sum / 2;
-
-    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(sum + 1, false));
-    storage[storage.size() - 1][0] = true;
-
-    for (int i = storage.size() - 2; i >= 0; i--)
+    if (storage[index][sum] == -1)
     {
-        for (int k = 0; k < storage[0].size(); k++)
-        {
-            bool val1 = false, val2 = false;
-            if (k - num[i] >= 0)
-                val1 = storage[i + 1][k - num[i]];
-            val2 = storage[i + 1][k];
+        if (getCount(num, storage, sum + num[index], total, index + 1))
+            return 1;
+        if (getCount(num, storage, sum, total, index + 1))
+            return 1;
 
-            storage[i][k] = val1 | val2;
-        }
+        storage[index][sum] = 0;
     }
 
-    return storage[0][sum];
+    return storage[index][sum];
+}
+
+    
+    bool canPartition(vector<int>& num) {
+    int total = 0;
+    for (auto i : num)
+        total += i;
+
+    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(total + 1, -1));
+    return getCount(num, storage, 0, total, 0);
         
     }
 };
