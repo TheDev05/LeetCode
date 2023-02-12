@@ -33,9 +33,9 @@ int Preorder(TreeNode *root, std::map<int, std::map<int, std::multiset<int>>> &n
         std::vector<int> temp;
         for (auto j : i.second)
         {
-            for (auto k : j.second)
-                temp.push_back(k);
+            temp.insert(temp.end(), j.second.begin(), j.second.end());
         }
+        
         result.push_back(temp);
     }
     
