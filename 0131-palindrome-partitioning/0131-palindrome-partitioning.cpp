@@ -1,6 +1,6 @@
 class Solution {
 public:
-bool isPalin(std::string text)
+bool isPalin(std::string &text)
 {
     for (int i = 0; i < text.size() / 2; i++)
     {
@@ -11,7 +11,7 @@ bool isPalin(std::string text)
     return 1;
 }
 
-int getCount(std::string text, std::vector<std::string> temp, std::vector<std::vector<std::string>> &num, int index)
+int getCount(std::string text, std::vector<std::string> &temp, std::vector<std::vector<std::string>> &num, int index)
 {
     if (index >= text.size())
     {
