@@ -12,39 +12,27 @@
 class Solution {
 public:
     
-void traverse(TreeNode *root, std::vector<int> &num)
+void traverse(TreeNode *root, std::map<int, int> &num, int j)
 {
     if (root == NULL)
         return;
 
-    std::queue<TreeNode *> temp;
-    temp.push(root);
+    num[j] = root->val;
+    traverse(root->left, num, j + 1);
+    traverse(root->right, num, j + 1);
 
-    while (temp.size())
-    {
-        int size = temp.size();
-        int last = 0;
-
-        for (int i = 0; i < size; i++)
-        {
-            TreeNode *local = temp.front();
-            temp.pop();
-
-            if (local->left != NULL)
-                temp.push(local->left);
-            if (local->right != NULL)
-                temp.push(local->right);
-
-            last = local->val;
-        }
-
-        num.push_back(last);
-    }
+    return;
 }
-    vector<int> rightSideView(TreeNode* root) {
-    std::vector<int> num;
-    traverse(root, num);
     
-    return num;
+    vector<int> rightSideView(TreeNode* root) {
+    std::map<int, int> num;
+    traverse(root, num, 0);
+
+    std::vector<int> result;
+    for (auto i : num)
+        result.push_back(i.second);
+        
+    return result;
+    
     }
 };
