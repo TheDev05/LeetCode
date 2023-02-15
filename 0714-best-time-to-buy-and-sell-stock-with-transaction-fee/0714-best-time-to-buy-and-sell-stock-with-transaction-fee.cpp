@@ -1,32 +1,35 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& num, int k) {
-        
-    std::vector<std::vector<int>> storage(num.size() + 1, std::vector<int>(2, 0));
-    for (int i = storage.size() - 2; i >= 0; i--)
+int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int k, int buy, int index)
+{
+    if (index >= num.size())
+        return 0;
+
+    if (storage[index][buy] == -1)
     {
-        for (int j = 0; j < 2; j++)
+        if (buy)
         {
-            if (j)
-            {
-                int val1 = 0, val2 = 0;
-                val1 = (storage[i + 1][0] - num[i]) - k;
-                val2 = storage[i + 1][j];
+            int val1 = 0, val2 = 0;
+            val1 = (getCount(num, storage, k, 0, index + 1) - num[index]) - k;
+            val2 = getCount(num, storage, k, buy, index + 1);
 
-                storage[i][j] = std::max(val1, val2);
-            }
-            else
-            {
-                int val1 = 0, val2 = 0;
-                val1 = num[i] + storage[i + 1][1];
-                val2 = storage[i + 1][j];
+            storage[index][buy] = std::max(val1, val2);
+        }
+        else
+        {
+            int val1 = 0, val2 = 0;
+            val1 = num[index] + getCount(num, storage, k, 1, index + 1);
+            val2 = getCount(num, storage, k, buy, index + 1);
 
-                storage[i][j] = std::max(val1, val2);
-            }
+            storage[index][buy] = std::max(val1, val2);
         }
     }
 
-    return storage[0][1];
-        
+    return storage[index][buy];
+}
+    
+    int maxProfit(vector<int>& num, int k) {
+    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(2, -1));
+    return getCount(num, storage, k, 1, 0);       
     }
 };
