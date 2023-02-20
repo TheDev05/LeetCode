@@ -9,7 +9,7 @@
  */
 class Solution {
 public:
-int traverse(TreeNode *root, TreeNode* target, std::vector<TreeNode*> &path)
+int traverse(TreeNode *root, TreeNode* &target, std::vector<TreeNode*> &path)
 {
     if (root == NULL)
         return false;
