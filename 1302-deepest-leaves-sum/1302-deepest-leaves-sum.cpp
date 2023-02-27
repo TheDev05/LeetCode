@@ -11,6 +11,9 @@
  */
 class Solution {
 public:
+
+// Using BFS
+
 int traverse(TreeNode *root)
 {
     if (root == NULL)
