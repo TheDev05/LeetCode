@@ -12,41 +12,24 @@
 class Solution {
 public:
 
-// Using BFS
-
-int traverse(TreeNode *root)
+// Using DFS
+int traverse(TreeNode *root, std::map<int, int> &data, int level)
 {
     if (root == NULL)
         return 0;
 
-    std::queue<TreeNode *> temp;
-    temp.push(root);
+    data[level] += root->val;
 
-    int sum = 0;
-    while (temp.size())
-    {
-        int size = temp.size();
-        sum = 0;
-        
-        for (int i = 0; i < size; i++)
-        {
-            TreeNode *local = temp.front();
-            temp.pop();
+    traverse(root->left, data, level + 1);
+    traverse(root->right, data, level + 1);
 
-            if (local->left == NULL && local->right == NULL)
-                sum += local->val;
-
-            if (local->left != NULL)
-                temp.push(local->left);
-            if (local->right != NULL)
-                temp.push(local->right);
-        }
-    }
-
-    return sum;
+    return 0;
 }
     int deepestLeavesSum(TreeNode* root) {
-    return traverse(root);
+    std::map<int, int> data;
+    traverse(root, data, 0);
+
+    return data.rbegin()->second;
         
     }
 };
