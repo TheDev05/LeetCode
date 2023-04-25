@@ -1,21 +1,38 @@
-class Solution {
-public:
-    int climbStairs(int n) {
-    std::vector<int> storage(n + 1, 0);
-    storage[n] = 1;
 
-    for (int i = n - 1; i >= 0; i--)
+int fun(int n, int dp[])
+{
+     if (n == 0)
     {
-        int val1 = 0, val2 = 0;
-        if (i + 1 <= n)
-            val1 = storage[i + 1];
-        if (i + 2 <= n)
-            val2 = storage[i + 2];
+        return (1);
+    }
+    
+     if (dp[n] != -1)
+        return (dp[n]);
 
-        storage[i] = val1 + val2;
+    int move1 = 0;
+    int move2 = 0;
+
+    if (n - 1 >= 0)
+    {
+        move1 = fun(n - 1, dp);
     }
 
-    return storage[0];
-        
+    if (n - 2 >= 0)
+    {
+        move2 = fun(n - 2, dp);
+    }
+
+    return (dp[n] = move1 + move2);
+}
+
+class Solution
+{
+public:
+    int climbStairs(int n)
+    {
+        int dp[n + 1];
+        memset(dp, -1, sizeof(dp));
+
+        return (fun(n, dp));
     }
 };
