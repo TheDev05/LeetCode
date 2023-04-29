@@ -1,36 +1,32 @@
 class Solution {
 public:
-int getCount(std::string text, std::vector<int> &storage, std::set<std::string> &data, int index)
-{
-    if (index >= text.size())
-        return 1;
-
-    if (storage[index] == -1)
-    {
-        std::string local;
-        for (int i = index; i < text.size(); i++)
-        {
-            local += text[i];
-            if (data.count(local))
-            {
-                if (getCount(text, storage, data, i + 1))
-                    return 1;
-            }
-        }
-
-        storage[index] = 0;
-    }
-
-    return storage[index];
-}
-
     
     bool wordBreak(string text, vector<string>& num) {
     std::set<std::string> data;
     for (auto i : num)
         data.insert(i);
 
-    std::vector<int> storage(text.size(), -1);
-    return getCount(text, storage, data, 0);       
+    std::vector<int> storage(text.size() + 1, 0);
+    storage[storage.size() - 1] = 1;
+    
+    for (int i = storage.size() - 2; i >= 0; i--)
+    {
+        std::string local;
+        int val = 0;
+        
+        for (int j = i; j < text.size(); j++)
+        {
+            local += text[j];
+            if (data.count(local))
+            {
+                if (storage[j+1])
+                    val = 1;
+            }
+        }
+
+        storage[i] = val;
+    }
+
+    return storage[0];       
     }
 };
