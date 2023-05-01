@@ -11,39 +11,43 @@
  */
 class Solution {
 public:
-void Levelorder(TreeNode *root, std::vector<std::vector<int>> &num)
+void traverse(TreeNode *root, std::vector<std::vector<int>> &store)
 {
     if (root == NULL)
         return;
 
-    std::queue<TreeNode *> storage;
-    storage.push(root);
+    std::deque<TreeNode *> inox;
+    inox.push_back(root);
 
-    while (storage.size())
+    while (inox.size())
     {
         std::vector<int> temp;
-        int size = storage.size();
-        
+        int size = inox.size();
+
         for (int i = 0; i < size; i++)
         {
-            TreeNode *local = storage.front();
-            storage.pop();
+            TreeNode *atom = inox.front();
 
-            if (local->left != NULL)
-                storage.push(local->left);
-            if (local->right != NULL)
-                storage.push(local->right);
+            if (atom->left != NULL)
+                inox.push_back(atom->left);
+            if (atom->right != NULL)
+                inox.push_back(atom->right);
 
-            temp.push_back(local->val);
+            temp.push_back(atom->val);
+            inox.pop_front();
         }
 
-        num.push_back(temp);
+        store.push_back(temp);
     }
+
+    return;
 }
-    vector<vector<int>> levelOrder(TreeNode* root) {
-    std::vector<std::vector<int>> num;
-    Levelorder(root, num);
+
     
-    return num;
+    vector<vector<int>> levelOrder(TreeNode* root) {
+    std::vector<std::vector<int>> store;
+    traverse(root, store);
+    
+    return store;
     }
 };
