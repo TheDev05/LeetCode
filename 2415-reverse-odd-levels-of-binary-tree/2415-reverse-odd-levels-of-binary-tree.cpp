@@ -22,7 +22,7 @@ void BFS(TreeNode *root, std::vector<std::vector<int>> &store)
     for (int i = 0; inox.size(); i++)
     {
         int size = inox.size();
-        std::vector<int> temp;
+        std::vector<TreeNode *> temp;
 
         for (int i = 0; i < size; i++)
         {
@@ -33,40 +33,30 @@ void BFS(TreeNode *root, std::vector<std::vector<int>> &store)
             if (atom->right != NULL)
                 inox.push(atom->right);
 
-            temp.push_back(atom->val);
+            temp.push_back(atom);
             inox.pop();
         }
 
         if (i & 1)
-            reverse(temp.begin(), temp.end());
+        {
+           for(int j=0; j < temp.size()/2; j++)
+           {
+               TreeNode *alpha = temp[j];
+               TreeNode *beta = temp[temp.size()-1-j];
+               
+               int dot = alpha->val;
+               alpha->val = beta->val;
+               beta->val = dot;
+           }
+        }
 
-        store.push_back(temp);
     }
 }
-    
-void traverse(TreeNode *&root, std::vector<std::vector<int>> &store, int i, std::map<int, int> &inox)
-{
-    if (root == NULL)
-        return;
-
-    if (i & 1)
-    {
-        inox[i]++;
-        root->val = store[i][inox[i] - 1];
-    }
-
-    traverse(root->left, store, i + 1, inox);
-    traverse(root->right, store, i + 1, inox);
-}
-
-    
+        
     TreeNode* reverseOddLevels(TreeNode* root) {
         
-    std::vector<std::vector<int>> store;
-    std::map<int, int> inox;
-        
+    std::vector<std::vector<int>> store;        
     BFS(root, store);
-    traverse(root, store, 0, inox);
     
     return root;
         
