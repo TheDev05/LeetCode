@@ -1,29 +1,35 @@
 class Solution {
 public:
 
-int fillStorage(std::vector<int> &num, std::vector<std::vector<int>> &storage, int index)
+    std::vector<std::vector<int>> getSub(std::vector<int> &num, set<int> &inox, std::vector<int> &temp, std::vector<std::vector<int>> &result, int index)
 {
-    for (int i = index; i < num.size() - 1; i++)
+    for (int i = 0; i < num.size(); i++)
     {
-        for (int j = i + 1; j < num.size(); j++)
+        if (inox.count(num[i]) == false)
         {
-            std::swap(num[i], num[j]);
-            fillStorage(num, storage, i + 1);
-            std::swap(num[i], num[j]);
+            inox.insert(num[i]);
+            temp.push_back(num[i]);
+
+            getSub(num, inox, temp, result, i);
+
+            temp.pop_back();
+            inox.erase(num[i]);
         }
     }
 
-    storage.push_back(num);
-    return 0;
+    if (temp.size() == num.size())
+    {
+        result.push_back(temp);
+    }
+
+    return result;
 }
+    vector<vector<int>> permute(vector<int>& nums) {
+    set<int> inox;
+    std::vector<int>temp;
+    std::vector<std::vector<int>> result;
 
-
-    vector<vector<int>> permute(vector<int>& num) {
-
-    std::vector<std::vector<int>> storage;
-    fillStorage(num, storage, 0);
-    
-    return storage;
-
+    getSub(nums, inox, temp, result, 0);
+    return(result);
     }
 };
