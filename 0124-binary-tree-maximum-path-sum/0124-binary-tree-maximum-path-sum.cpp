@@ -11,26 +11,32 @@
  */
 class Solution {
 public:
-int getMaxPathSum(TreeNode *root, int &max)
+int traverse(TreeNode *root, int &sum)
 {
     if (root == NULL)
         return 0;
 
-    int left = getMaxPathSum(root->left, max);
-    int right = getMaxPathSum(root->right, max);
-
-    if (left < 0) left = 0;
-    if (right < 0) right = 0;
-       
-    max = std::max(max, left + right + root->val);
+    int left = traverse(root->left, sum);
+    int right = traverse(root->right, sum);
+    sum = std::max(sum, root->val);
+    
+    if(left>0 && right>0)
+        sum=std::max(sum, root->val+left+right);
+    else if(left>0)
+        sum=std::max(sum, root->val+left);
+    else if(right>0)
+        sum=std::max(sum, root->val+right);
+    
+    if(std::max(left,right)>0)
     return std::max(left, right) + root->val;
+    else return root->val;
 }
     
     int maxPathSum(TreeNode* root) {
         
-    int max = INT_MIN;
-    getMaxPathSum(root, max);
-
-    return max;    
+    int sum = INT_MIN;
+    traverse(root, sum);
+    
+    return sum;
     }
 };
