@@ -9,46 +9,32 @@
  */
 class Solution {
 public:
-int traverse(TreeNode *root, TreeNode* &target, std::vector<TreeNode*> &path)
+int traverse(TreeNode *root, TreeNode *val1, TreeNode *val2, TreeNode *&result)
 {
     if (root == NULL)
-        return false;
+        return 0;
 
-    path.push_back(root);
-    if (root == target)
-        return true;
+    int temp1 = 0, temp2 = 0, temp3 = 0;
 
-    if (traverse(root->left, target, path))
-        return true;
-    if (traverse(root->right, target, path))
-        return true;
+    temp1 = traverse(root->left, val1, val2, result);
+    temp2 = traverse(root->right, val1, val2, result);
 
-    path.pop_back();
-    return false;
+    if (root->val == val1->val || root->val == val2->val)
+        temp3 = 1;
+
+    if (temp1 + temp2 + temp3 == 2)
+        result = root;
+
+    if (temp1 || temp2 || temp3)
+        return 1;
+
+    return 0;
 }
     
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* target1, TreeNode* target2) {
-    std::vector<TreeNode*> path1, path2;
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    TreeNode *result = new TreeNode(0);
+    traverse(root, p, q, result);
 
-    traverse(root, target1, path1);
-    traverse(root, target2, path2);
-
-    std::set<TreeNode*> data;
-    for (auto i : path1)
-        data.insert(i);
-
-    TreeNode* local = NULL;
-    for (int i = 0; i < path2.size(); i++)
-    {
-        if (data.count(path2[i]))
-            local = path2[i];
-    }
-        
-    for(auto i: path1) std::cout<<i->val<<'\n';
-    std::cout<<'\n';
-    for(auto i: path2) std::cout<<i->val<<'\n';
-
-    return local; 
-        
+    return result;        
     }
 };
