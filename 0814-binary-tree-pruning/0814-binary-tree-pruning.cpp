@@ -16,13 +16,10 @@ TreeNode *traverse(TreeNode *root)
     if (root == NULL)
         return NULL;
 
-    TreeNode *dash1 = traverse(root->left);
-    TreeNode *dash2 = traverse(root->right);
+    root->left = traverse(root->left);
+    root->right = traverse(root->right);
 
-    root->left = dash1;
-    root->right = dash2;
-
-    if (dash1 == NULL && dash2 == NULL && root->val == 0)
+    if (root->left == NULL && root->right == NULL && root->val == 0)
         return NULL;
 
     return root;
