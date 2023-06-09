@@ -10,7 +10,7 @@
 
 class Solution {
 public:
-void traverse(TreeNode *root, std::map<int, int> &parent, std::map<int, int> &left, std::map<int, int> &right)
+void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parent)
 {
     if (root == NULL)
         return;
@@ -18,7 +18,7 @@ void traverse(TreeNode *root, std::map<int, int> &parent, std::map<int, int> &le
     std::queue<TreeNode *> inox;
     inox.push(root);
 
-    parent[root->val] = -1;
+    std::vector<int> result;
     while (inox.size())
     {
         int size = inox.size();
@@ -29,61 +29,64 @@ void traverse(TreeNode *root, std::map<int, int> &parent, std::map<int, int> &le
 
             if (temp->left != NULL)
             {
-                parent[temp->left->val] = temp->val;
-                left[temp->val] = temp->left->val;
-
+                parent[temp->left] = temp;
                 inox.push(temp->left);
             }
-            else
-                left[temp->val] = -1;
 
             if (temp->right != NULL)
             {
-                parent[temp->right->val] = temp->val;
-                right[temp->val] = temp->right->val;
-
+                parent[temp->right] = temp;
                 inox.push(temp->right);
             }
-            else
-                right[temp->val] = -1;
         }
     }
 }
-
-int backtrack(int val, std::vector<int> &result, std::map<int, int> &parent, std::map<int, int> &left, std::map<int, int> &right, std::set<int> &skip, int k)
-{
-    if (skip.count(val))
-        return 0;
-
-    if (val == -1)
-        return 0;
-
-    if (k == 0)
-    {
-        result.push_back(val);
-        return 1;
-    }
-
-    skip.insert(val);
-
-    int temp1 = backtrack(parent[val], result, parent, left, right, skip, k - 1);
-    int temp2 = backtrack(left[val], result, parent, left, right, skip, k - 1);
-    int temp3 = backtrack(right[val], result, parent, left, right, skip, k - 1);
-
-    skip.erase(val);
-    return temp1 + temp2 + temp3;
-}
     
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
-    int temp = target->val;
-
-    std::map<int, int> parent, left, right;
-    std::set<int> skip;
-
-    traverse(root, parent, left, right);
         
-    std::vector<int> result;
-    backtrack(temp, result, parent, left, right, skip, k);
+    std::vector<int>result;
+    if(k == 0)
+    {
+        result.push_back(target->val);
+        return result;
+    }
+        
+    std::map<TreeNode *, TreeNode *> parent;
+    traverse(root, parent);
+
+    std::queue<TreeNode *> inox;
+    std::set<TreeNode *> skip;
+
+    inox.push(target);
+    while (inox.size())
+    {
+        int size = inox.size();
+        for (int i = 0; i < size; i++)
+        {
+            TreeNode *temp = inox.front();
+            inox.pop();
+
+            if (temp->left != NULL && !skip.count(temp->left))
+                inox.push(temp->left);
+            if (temp->right != NULL && !skip.count(temp->right))
+                inox.push(temp->right);
+            if (parent.count(temp) && !skip.count(parent[temp]))
+                inox.push(parent[temp]);
+
+            skip.insert(temp);
+        }
+
+        k--;
+
+        if (k == 0)
+            break;
+    }
+
+    while (inox.size())
+    {
+        result.push_back(inox.front()->val);
+        inox.pop();
+    }
         
     return result;
         
