@@ -50,7 +50,7 @@ void traverse(TreeNode *root, std::map<int, int> &parent, std::map<int, int> &le
     }
 }
 
-int backtrack(int val, std::vector<int> &result, std::map<int, int> &parent, std::map<int, int> &left, std::map<int, int> &right, std::set<int> skip, int k)
+int backtrack(int val, std::vector<int> &result, std::map<int, int> &parent, std::map<int, int> &left, std::map<int, int> &right, std::set<int> &skip, int k)
 {
     if (skip.count(val))
         return 0;
