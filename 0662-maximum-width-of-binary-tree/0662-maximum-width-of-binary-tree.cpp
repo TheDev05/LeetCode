@@ -11,49 +11,51 @@
  */
 class Solution {
 public:
-long long traverse(TreeNode *root)
+void traverse(TreeNode *root, int &max)
 {
     if (root == NULL)
-        return 0;
+        return;
 
-    std::queue<TreeNode *> temp;
-    std::map<TreeNode *, long long> data;
+    std::queue<std::pair<TreeNode *, int>> inox;
+    inox.push({root, 1});
 
-    temp.push(root);
-    data[root] = 1;
-
-    long long max = 1;
-    while (temp.size())
+    while (inox.size())
     {
-        int size = temp.size();
-        max = std::max(max, (data.rbegin()->second - data.begin()->second) + 1);
-
-        int min=data.begin()->second;
+        long long size = inox.size(), left = -1, right = -1;
         for (int i = 0; i < size; i++)
         {
-            TreeNode *local = temp.front();
-            temp.pop();
+            TreeNode *temp = inox.front().first;
+            long long val = inox.front().second;
+            
+            inox.pop();
 
-            if (local->left != NULL)
+            if (temp->left != NULL)
             {
-                data[local->left] = 2 * (data[local]-min);
-                temp.push(local->left);
+                if (left == -1)
+                    left = val * 2;
+                right = val * 2;
+
+                inox.push({temp->left, (val * 2) - left});
             }
 
-            if (local->right != NULL)
+            if (temp->right != NULL)
             {
-                data[local->right] = ((long long)2 * (data[local]-min)) + 1;
-                temp.push(local->right);
-            }
+                if (left == -1)
+                    left = (val * 2) + 1;
+                right = (val * 2) + 1;
 
-            data.erase(local);
+                inox.push({temp->right, ((val * 2) + 1) - left});
+            }
         }
-    }
 
-    return max;
+        max = std::max((long long)max, abs(left - right) + 1);
+    }
 }
+    
     int widthOfBinaryTree(TreeNode* root) {
-    return (int)traverse(root);
-        
+    int max = 1;
+
+    traverse(root, max);
+    return max;        
     }
 };
