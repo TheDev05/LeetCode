@@ -11,43 +11,31 @@
  */
 class Solution {
 public:
+
 std::map<int, int> inox;
-TreeNode *traverse(std::vector<int> &in, std::vector<int> &pre, int i, int n)
+TreeNode *traverse(std::vector<int> &pre, int preStart, int preEnd, std::vector<int> &in, int inStart, int inEnd)
 {
-    int temp = i;
-    int min = INT_MAX, index = -1, val = 0;
-
-    for (i; i < n; i++)
-    {
-        int j = inox[in[i]];
-        
-        if (j < min)
-        {
-            min = j;
-            index = i;
-
-            val = in[i];
-        }
-    }
-
-    if (index == -1)
+    if (preEnd < preStart || inEnd < inStart)
         return NULL;
 
-    TreeNode *root = new TreeNode(val);
-    root->left = traverse(in, pre, temp, index);
-    root->right = traverse(in, pre, index + 1, n);
+    int rootIndex = inox[pre[preStart]];
+    TreeNode *root = new TreeNode(in[rootIndex]);
+
+    root->left = traverse(pre, preStart + 1, preStart + (rootIndex - inStart), in, inStart, rootIndex - 1);
+    root->right = traverse(pre, preStart + 1 + (rootIndex - inStart), preEnd, in, rootIndex + 1, inEnd);
 
     return root;
 }
-    TreeNode* buildTree(vector<int>& Preorder, vector<int>& Inorder) {
-        
-    int n = Preorder.size();
-    for (int i = 0; i < Preorder.size(); i++)
+
+    
+    TreeNode* buildTree(vector<int>& pre, vector<int>& in) {
+       
+    int n = in.size();
+    for (int i = 0; i < in.size(); i++)
     {
-        inox[Preorder[i]] = i;
+        inox[in[i]] = i;
     }
-        
-    return traverse(Inorder, Preorder, 0, n);
-        
+
+    return traverse(pre, 0, n - 1, in, 0, n - 1);        
     }
 };
