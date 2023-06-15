@@ -11,23 +11,32 @@
  */
 class Solution {
 public:
-void traverse(TreeNode *root, std::vector<int> &num)
+int traverse(TreeNode *root, int &index)
 {
     if (root == NULL)
-        return;
+        return 0;
 
-    traverse(root->left, num);
-    num.push_back(root->val);
-    traverse(root->right, num);
+    if (traverse(root->left, index))
+        return 1;
 
-    return;
+    index = index - 1;
+
+    if (index == 0)
+    {
+        index = root->val;
+        return 1;
+    }   
+        
+
+    if (traverse(root->right, index))
+        return 1;
+
+    return 0;
 }
     
     int kthSmallest(TreeNode* root, int index) {
-        
-    std::vector<int> num;
-    traverse(root, num);
+    traverse(root, index);
 
-    return num[index - 1];        
+    return index;        
     }
 };
