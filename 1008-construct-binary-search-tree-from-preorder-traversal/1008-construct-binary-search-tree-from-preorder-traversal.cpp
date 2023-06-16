@@ -11,33 +11,33 @@
  */
 class Solution {
 public:
-TreeNode *traverse(std::vector<int> &preorder, std::vector<int> &inorder, std::map<int, int> &data, int left, int right, int index)
+    
+TreeNode *validate(std::vector<int> &preorder, int &index, long long left, long long right)
 {
-    if (right < left || index >= preorder.size())
+    if (index >= preorder.size())
         return NULL;
 
-    int pos = data[preorder[index]];
-    TreeNode *root = new TreeNode(preorder[index]);
+    if (preorder[index] > left && preorder[index] < right)
+    {
+        TreeNode *root = new TreeNode(preorder[index]);
 
-    root->left = traverse(preorder, inorder, data, left, pos - 1, index + 1);
-    root->right = traverse(preorder, inorder, data, pos + 1, right, index + (pos - left) + 1);
+        index = index + 1;
 
-    return root;
+        root->left = validate(preorder, index, left, root->val);
+        root->right = validate(preorder, index, root->val, right);
+
+        return root;
+    }
+    else
+        return NULL;
 }
     
     TreeNode* bstFromPreorder(vector<int>& preorder) {
-        
-    std::vector<int>inorder;
-        
-    inorder = preorder;
-    sort(inorder.begin(), inorder.end());
 
-    std::map<int, int> data;
-    for (int i = 0; i < inorder.size(); i++)
-    {
-        data[inorder[i]] = i;
-    }
+    long long left = LONG_MIN, right = LONG_MAX;
+    int index = 0;
 
-    return traverse(preorder, inorder, data, 0, inorder.size() - 1, 0);        
+    return validate(preorder, index, left, right); 
+        
     }
 };
