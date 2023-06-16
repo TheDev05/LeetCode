@@ -11,20 +11,17 @@
  */
 class Solution {
 public:
-int traverse(TreeNode *root, long long &min)
+bool validate(TreeNode *root, long long left, long long right)
 {
     if (root == NULL)
         return 0;
 
-    if (traverse(root->left, min))
+    if (root->val <= left || root->val >= right)
         return 1;
 
-    if (root->val <= min)
+    if (validate(root->left, left, root->val))
         return 1;
-    else
-        min = root->val;
-
-    if (traverse(root->right, min))
+    if (validate(root->right, root->val, right))
         return 1;
 
     return 0;
@@ -32,11 +29,8 @@ int traverse(TreeNode *root, long long &min)
     
     bool isValidBST(TreeNode* root) {
         
-    long long min = LONG_MIN;
-    if (traverse(root, min))
-        return false;
-    else
-        return true;
-    
+    long long left = LONG_MIN, right = LONG_MAX;
+    return !validate(root, left, right); 
+        
     }
 };
