@@ -9,43 +9,42 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
-void traverse(TreeNode *root, std::vector<int> &inorder)
+void pushLeft(TreeNode *root, std::stack<TreeNode *> &st)
 {
     if (root == NULL)
         return;
 
-    traverse(root->left, inorder);
-    inorder.push_back(root->val);
-    traverse(root->right, inorder);
-
-    return;
+    while (root)
+    {
+        st.push(root);
+        root = root->left;
+    }
 }
 
 class BSTIterator
 {
-public:
-    int index = -1;
-    std::vector<int> inorder;
+    std::stack<TreeNode *> st;
 
+public:
     BSTIterator(TreeNode *root)
     {
-        traverse(root, inorder);
+        pushLeft(root, st);
     }
 
     int next()
     {
-        index++;
-        return inorder[index];
+        TreeNode *temp = st.top();
+        st.pop();
+
+        if (temp->right)
+            pushLeft(temp->right, st);
+
+        return temp->val;
     }
 
     bool hasNext()
-    { 
-        if(index == (inorder.size() - 1) ){
-            
-            return false;
-    }
-        return true;
+    {
+        return st.empty() ? false : true;
     }
 };
 
