@@ -10,5 +10,5 @@ GFG Profile : https://auth.geeksforgeeks.org/user/thedev05/profile
 Have a look at: https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi?hl=en
 <br>
 
-Love & Peace. 💙
+Love & Peace! 💙
 
