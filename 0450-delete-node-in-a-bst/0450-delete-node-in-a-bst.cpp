@@ -11,45 +11,57 @@
  */
 class Solution {
 public:
-TreeNode *helper(TreeNode *inox)
+TreeNode *read(TreeNode *root)
 {
-    if (inox->left == NULL)
+    if (root->left == NULL && root->right == NULL)
+        return NULL;
+
+    if (root->left != NULL && root->right != NULL)
     {
-        inox = inox->right;
+        TreeNode *temp = root->right;
+        while (temp->left)
+            temp = temp->left;
+        
+        temp->left = root->left;
+        return root->right;
     }
-    else if (inox->right == NULL)
-    {
-        inox = inox->left;
-    }
+    else if (root->left != NULL)
+        return root->left;
     else
-    {
-        TreeNode *dash = inox->left;
-        while (dash->right)
-        {
-            dash = dash->right;
-        }
+        return root->right;
+}
 
-        if (dash->right == NULL)
-            dash->right = inox->right;
-        inox = inox->left;
-    }
+TreeNode *traverse(TreeNode *root, int key)
+{
+    if (root == NULL)
+        return NULL;
 
-    return inox;
+    if (root->left != NULL && key == root->left->val)
+        root->left = read(root->left);
+    else if (root->right != NULL && root->right->val == key)
+        root->right = read(root->right);
+
+    if (root->val < key)
+        traverse(root->left, key);
+    else
+        traverse(root->right, key);
+
+    return NULL;
 }
     
     TreeNode* deleteNode(TreeNode* root, int key) {
+    
+    if(root == NULL) return NULL;
+    if(root->val == key) return read(root);
+        
     TreeNode *temp = root;
-
-    if (temp && key == temp->val)
-        return helper(temp);
-
     while (temp)
     {
         if (temp->val < key)
         {
             if (temp->right && temp->right->val == key)
             {
-                temp->right = helper(temp->right);
+                temp->right = read(temp->right);
                 break;
             }
             else
@@ -59,14 +71,14 @@ TreeNode *helper(TreeNode *inox)
         {
             if (temp->left && temp->left->val == key)
             {
-                temp->left = helper(temp->left);
+                temp->left = read(temp->left);
                 break;
             }
             else
                 temp = temp->left;
         }
-    }
+    }  
         
-   return root;
+    return root;
     }
 };
