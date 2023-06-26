@@ -30,25 +30,7 @@ TreeNode *read(TreeNode *root)
     else
         return root->right;
 }
-
-TreeNode *traverse(TreeNode *root, int key)
-{
-    if (root == NULL)
-        return NULL;
-
-    if (root->left != NULL && key == root->left->val)
-        root->left = read(root->left);
-    else if (root->right != NULL && root->right->val == key)
-        root->right = read(root->right);
-
-    if (root->val < key)
-        traverse(root->left, key);
-    else
-        traverse(root->right, key);
-
-    return NULL;
-}
-    
+ 
     TreeNode* deleteNode(TreeNode* root, int key) {
     
     if(root == NULL) return NULL;
