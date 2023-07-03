@@ -3,72 +3,57 @@ public:
     int numIslands(vector<vector<char>>& num) {
     
     int n = num.size(), m = num[0].size();
-    std::map<std::pair<int, int>, int> data;
+    std::vector<std::vector<int>> inox(n, std::vector<int>(m, 0));
 
-    int inox = 1;
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            if (num[i][j] == '1')
-                data[{i, j}] = inox;
-
-            inox++;
-        }
-    }
-
-    std::vector<int> adj[(n * m) + 1];
-    for (auto k : data)
-    {
-        int i = k.first.first, j = k.first.second;
-        int index = k.second;
-
-        if (data.count({i + 1, j}))
-            adj[index].push_back(data[{i + 1, j}]);
-        if (data.count({i - 1, j}))
-            adj[index].push_back(data[{i - 1, j}]);
-
-        if (data.count({i, j + 1}))
-            adj[index].push_back(data[{i, j + 1}]);
-        if (data.count({i, j - 1}))
-            adj[index].push_back(data[{i, j - 1}]);
-
-        if (adj[index].empty())
-            adj[index].push_back(-1);
-    }
-
-    std::vector<int> visited((n * m) + 1, 0);
-
-    int count = 0;
-    for (int i = 1; i <= (n * m); i++)
-    {
-        if (adj[i].size() && !visited[i])
-        {
-            count++;
-            if(adj[i][0] == -1) continue;
-            
-            std::queue<int> temp;
-
-            temp.push(i);
-            visited[i] = 1;
-
-            while (temp.size())
+            if (num[i][j] == '1' && inox[i][j] == 0)
             {
-                int dash = temp.front();
-                temp.pop();
+                count++;
 
-                for (auto j : adj[dash])
+                std::queue<std::pair<int, int>> temp;
+
+                temp.push({i, j});
+                inox[i][j] = 1;
+
+                while (temp.size())
                 {
-                    if (!visited[j])
+                    int row = temp.front().first;
+                    int col = temp.front().second;
+
+                    temp.pop();
+
+                    if (row - 1 >= 0 && inox[row - 1][col] == 0 && num[row - 1][col] == '1')
                     {
-                        visited[j] = 1;
-                        temp.push(j);
+                        temp.push({row - 1, col});
+                        inox[row - 1][col] = 1;
+                    }
+
+                    if (row + 1 < n && inox[row + 1][col] == 0 && num[row + 1][col] == '1')
+                    {
+                        temp.push({row + 1, col});
+                        inox[row + 1][col] = 1;
+                    }
+
+                    if (col - 1 >= 0 && inox[row][col - 1] == 0 && num[row][col - 1] == '1')
+                    {
+                        temp.push({row, col - 1});
+                        inox[row][col - 1] = 1;
+                    }
+
+                    if (col + 1 < m && inox[row][col + 1] == 0 && num[row][col + 1] == '1')
+                    {
+                        temp.push({row, col + 1});
+                        inox[row][col + 1] = 1;
                     }
                 }
             }
         }
     }
 
-    return count;
+    return count;        
     }
 };
