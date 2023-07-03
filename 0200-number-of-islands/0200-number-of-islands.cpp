@@ -10,14 +10,14 @@ public:
     {
         for (int j = 0; j < m; j++)
         {
-            if (num[i][j] == '1' && inox[i][j] == 0)
+            if (num[i][j] == '1')
             {
                 count++;
 
                 std::queue<std::pair<int, int>> temp;
 
                 temp.push({i, j});
-                inox[i][j] = 1;
+                num[i][j] = '0';
 
                 while (temp.size())
                 {
@@ -26,33 +26,34 @@ public:
 
                     temp.pop();
 
-                    if (row - 1 >= 0 && inox[row - 1][col] == 0 && num[row - 1][col] == '1')
+                    if (row - 1 >= 0 && num[row - 1][col] == '1')
                     {
                         temp.push({row - 1, col});
-                        inox[row - 1][col] = 1;
+                        num[row - 1][col] = '0';
                     }
 
-                    if (row + 1 < n && inox[row + 1][col] == 0 && num[row + 1][col] == '1')
+                    if (row + 1 < n && num[row + 1][col] == '1')
                     {
                         temp.push({row + 1, col});
-                        inox[row + 1][col] = 1;
+                        num[row + 1][col] = '0';
                     }
 
-                    if (col - 1 >= 0 && inox[row][col - 1] == 0 && num[row][col - 1] == '1')
+                    if (col - 1 >= 0 && num[row][col - 1] == '1')
                     {
                         temp.push({row, col - 1});
-                        inox[row][col - 1] = 1;
+                        num[row][col - 1] = '0';
                     }
 
-                    if (col + 1 < m && inox[row][col + 1] == 0 && num[row][col + 1] == '1')
+                    if (col + 1 < m && num[row][col + 1] == '1')
                     {
                         temp.push({row, col + 1});
-                        inox[row][col + 1] = 1;
+                        num[row][col + 1] = '0';
                     }
                 }
             }
         }
     }
+
 
     return count;        
     }
