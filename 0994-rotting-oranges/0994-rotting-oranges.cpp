@@ -18,11 +18,11 @@ public:
             }
         }
     }
-
-    int count = 0;        
+      
+    int count = 0;
     while (inox.size())
     {
-        int size = inox.size();
+        int size = inox.size(), dash = 0;
         for (int i = 0; i < size; i++)
         {
             int row = inox.front().first;
@@ -34,28 +34,34 @@ public:
             {
                 inox.push({row - 1, col});
                 vis[row - 1][col] = 1;
+
+                dash++;
             }
 
             if (row + 1 < n && num[row + 1][col] == 1 && vis[row + 1][col] == 0)
             {
                 inox.push({row + 1, col});
                 vis[row + 1][col] = 1;
+                dash++;
             }
 
             if (col - 1 >= 0 && num[row][col - 1] == 1 && vis[row][col - 1] == 0)
             {
                 inox.push({row, col - 1});
                 vis[row][col - 1] = 1;
+                dash++;
             }
 
             if (col + 1 < m && num[row][col + 1] == 1 && vis[row][col + 1] == 0)
             {
                 inox.push({row, col + 1});
                 vis[row][col + 1] = 1;
+                dash++;
             }
         }
 
-        count++;
+        if (dash)
+            count++;
     }
         
         
@@ -65,11 +71,11 @@ public:
         for (int j = 0; j < m; j++)
         {
             if (num[i][j] && vis[i][j] == 0)
-                count = 0;
+                count = -1;
             if(num[i][j]) ok = false;
         }
     }
 
-     return (ok) ? 0 : count - 1;        
+     return (ok) ? 0 : count;        
     }
 };
