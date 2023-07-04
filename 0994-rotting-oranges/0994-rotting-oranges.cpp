@@ -34,7 +34,6 @@ public:
             {
                 inox.push({row - 1, col});
                 vis[row - 1][col] = 1;
-
                 dash++;
             }
 
@@ -60,7 +59,7 @@ public:
             }
         }
 
-        if (dash)
+        if (inox.size())
             count++;
     }
         
