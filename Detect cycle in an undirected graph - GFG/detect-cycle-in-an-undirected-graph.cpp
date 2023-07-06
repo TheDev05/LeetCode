@@ -7,17 +7,15 @@ class Solution {
   public:
 bool check(std::vector<int> num[], std::vector<int> &vis, int start)
 {
-    std::queue<std::pair<int, int>> qt;
+    std::queue<int> qt;
 
-    qt.push({start, -1});
+    qt.push(start);
     vis[start] = 1;
 
     bool ok = false;
     while (qt.size())
     {
-        int inox = qt.front().first;
-        int parent = qt.front().second;
-
+        int inox = qt.front();
         qt.pop();
 
         int count = 0;
@@ -26,7 +24,7 @@ bool check(std::vector<int> num[], std::vector<int> &vis, int start)
             if (vis[i]) count++;
             else
             {
-                qt.push({i, inox});
+                qt.push(i);
                 vis[i] = 1;
             }
         }
