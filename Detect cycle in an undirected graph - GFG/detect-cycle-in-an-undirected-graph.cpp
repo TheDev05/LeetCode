@@ -20,19 +20,18 @@ bool check(std::vector<int> num[], std::vector<int> &vis, int start)
 
         qt.pop();
 
+        int count = 0;
         for (auto i : num[inox])
         {
-            if (vis[i])
-            {
-                if (i != parent)
-                    ok = true;
-            }
+            if (vis[i]) count++;
             else
             {
                 qt.push({i, inox});
                 vis[i] = 1;
             }
         }
+        
+        if(count > 1) ok = true;
     }
 
     return ok;
