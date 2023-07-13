@@ -22,7 +22,7 @@ public:
     int count = 0;
     while (inox.size())
     {
-        int size = inox.size(), dash = 0;
+        int size = inox.size();
         for (int i = 0; i < size; i++)
         {
             int row = inox.front().first;
@@ -34,28 +34,24 @@ public:
             {
                 inox.push({row - 1, col});
                 vis[row - 1][col] = 1;
-                dash++;
             }
 
             if (row + 1 < n && num[row + 1][col] == 1 && vis[row + 1][col] == 0)
             {
                 inox.push({row + 1, col});
                 vis[row + 1][col] = 1;
-                dash++;
             }
 
             if (col - 1 >= 0 && num[row][col - 1] == 1 && vis[row][col - 1] == 0)
             {
                 inox.push({row, col - 1});
                 vis[row][col - 1] = 1;
-                dash++;
             }
 
             if (col + 1 < m && num[row][col + 1] == 1 && vis[row][col + 1] == 0)
             {
                 inox.push({row, col + 1});
                 vis[row][col + 1] = 1;
-                dash++;
             }
         }
 
