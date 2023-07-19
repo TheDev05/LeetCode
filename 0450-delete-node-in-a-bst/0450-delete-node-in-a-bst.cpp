@@ -11,55 +11,56 @@
  */
 class Solution {
 public:
-TreeNode *read(TreeNode *root)
+TreeNode *traverse(TreeNode *temp)
 {
-    if (root->left == NULL && root->right == NULL)
+    if (temp->left == NULL && temp->right == NULL)
         return NULL;
 
-    if (root->left != NULL && root->right != NULL)
+    if (temp->left && temp->right)
     {
-        TreeNode *temp = root->right;
-        while (temp->left)
-            temp = temp->left;
-        
-        temp->left = root->left;
-        return root->right;
+        TreeNode *inox = temp->right;
+        while (inox->left)
+            inox = inox->left;
+
+        inox->left = temp->left;
+        return temp->right;
     }
-    else if (root->left != NULL)
-        return root->left;
+    else if (temp->left)
+        return temp->left;
     else
-        return root->right;
+        return temp->right;
 }
- 
+
+    
     TreeNode* deleteNode(TreeNode* root, int key) {
     
-    if(root == NULL) return NULL;
-    if(root->val == key) return read(root);
-        
+    if(root == NULL) return {};
+    if(root -> val == key) return traverse(root);
+    
     TreeNode *temp = root;
+    TreeNode *parent = NULL;
+
     while (temp)
     {
-        if (temp->val < key)
+        if (temp->val == key)
         {
-            if (temp->right && temp->right->val == key)
-            {
-                temp->right = read(temp->right);
-                break;
-            }
+            TreeNode *inox = traverse(temp);
+
+            if (parent->left && parent->left->val == key)
+                parent->left = inox;
             else
-                temp = temp->right;
+                parent->right = inox;
+
+            break;
         }
+
+        parent = temp;
+
+        if (temp->val > key)
+            temp = temp->left;
         else
-        {
-            if (temp->left && temp->left->val == key)
-            {
-                temp->left = read(temp->left);
-                break;
-            }
-            else
-                temp = temp->left;
-        }
-    }  
+            temp = temp->right;
+    } 
         
     return root;
     }
