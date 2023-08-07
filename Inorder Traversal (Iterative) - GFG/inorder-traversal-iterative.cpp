@@ -96,51 +96,50 @@ struct Node {
 };*/
 class Solution {
 public:
-void traverse(Node *root, std::vector<int> &num)
+
+std::vector<int>num;
+void traverse(Node *root)
 {
     if (root == NULL)
         return;
+        
+    num.clear();
 
-    Node *current = root;
-    while (current)
+    Node *curr = root;
+
+    while (curr)
     {
-        if (current->left)
+        if (curr->left)
         {
-            Node *temp = current->left;
-            while (temp->right && temp->right != current)
-            {
+            Node *temp = curr->left;
+            while (temp->right && temp->right != curr)
                 temp = temp->right;
-            }
 
-            if (temp->right == NULL)
+            if (temp->right == curr)
             {
-                temp->right = current;
-                current = current->left;
+                num.push_back(curr->data);
+
+                curr = curr->right;
+                temp->right = NULL;
             }
             else
             {
-                num.push_back(current->data);
-
-                current = current->right;
-                temp->right = NULL;
+                temp->right = curr;
+                curr = curr->left;
             }
         }
         else
         {
-            num.push_back(current->data);
-            current = current->right;
+            num.push_back(curr->data);
+            curr = curr->right;
         }
     }
 }
-
     vector<int> inOrder(Node* root)
     {
         //code here
-    std::vector<int> num;
-    traverse(root, num);
-    
-    return num;
-    
+        traverse(root);
+        return num;
     }
 };
 
