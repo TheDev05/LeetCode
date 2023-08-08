@@ -11,7 +11,26 @@
  */
 class Solution {
 public:
-void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parent, std::queue<TreeNode *> &temp)
+std::pair<int, TreeNode *> traverse(TreeNode *root, std::set<TreeNode *> &store)
+{
+    if (root == NULL)
+        return {0, NULL};
+
+    if (store.count(root))
+        return {1, root};
+
+    auto it1 = traverse(root->left, store);
+    auto it2 = traverse(root->right, store);
+
+    if (it1.first == store.size())
+        return it1;
+    if (it2.first == store.size())
+        return it2;
+
+    return {it1.first + it2.first, root};
+}
+
+void LastNodes(TreeNode *root, std::set<TreeNode *> &store)
 {
     if (root == NULL)
         return;
@@ -22,64 +41,27 @@ void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parent, std::que
     while (inox.size())
     {
         int size = inox.size();
-        std::queue<TreeNode *> atom;
+        store.clear();
 
         for (int i = 0; i < size; i++)
         {
-            TreeNode *dash = inox.front();
+            auto it = inox.front();
             inox.pop();
 
-            if (dash->left)
-            {
-                parent[dash->left] = dash;
-                inox.push(dash->left);
-                atom.push(dash->left);
-            }
+            if (it->left)
+                inox.push(it->left);
+            if (it->right)
+                inox.push(it->right);
 
-            if (dash->right)
-            {
-                parent[dash->right] = dash;
-                inox.push(dash->right);
-                atom.push(dash->right);
-            }
+            store.insert(it);
         }
-
-        if (atom.size())
-            temp = atom;
     }
 }
-
     
     TreeNode* subtreeWithAllDeepest(TreeNode* root) {
-    std::map<TreeNode *, TreeNode *> parent;
-    std::queue<TreeNode *> temp;
-
-    traverse(root, parent, temp);
-
-    while (temp.size())
-    {
-        int size = temp.size();
-        if (size == 1)
-        {
-            return temp.front();
-            break;
-        }
-
-        std::set<int> skip;
-        for (int i = 0; i < size; i++)
-        {
-            TreeNode *dash = temp.front();
-            temp.pop();
-
-            TreeNode *atom = parent[dash];
-            if (skip.count(atom->val) == false)
-            {
-                temp.push(atom);
-                skip.insert(atom->val);
-            }
-        }
-    }
-    
-    return root;
+    std::set<TreeNode *> store;
+    LastNodes(root, store);
+        
+    return traverse(root, store).second;   
     }
 };
