@@ -1,76 +1,52 @@
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& num) {
-    
-    int n = num.size(), m = num[0].size();
         
-    std::vector<std::vector<int>> vis(n, std::vector<int>(m, 0));
+    std::vector<std::vector<int>> store(num.size(), std::vector<int>(num[0].size(), 0));
     std::queue<std::pair<int, int>> inox;
 
-    for (int i = 0; i < n; i++)
+    int count1 = 0;
+    for (int i = 0; i < num.size(); i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < num[0].size(); j++)
         {
             if (num[i][j] == 2)
-            {
                 inox.push({i, j});
-                vis[i][j] = 1;
-            }
+            else if (num[i][j] == 1)
+                count1++;
         }
     }
-      
-    int count = 0;
+
+    int r[4] = {-1, 1, 0, 0};
+    int c[4] = {0, 0, -1, 1};
+
+    int max = 0, count2 = 0;
     while (inox.size())
     {
-        int size = inox.size();
-        for (int i = 0; i < size; i++)
+        int row = inox.front().first;
+        int col = inox.front().second;
+
+        inox.pop();
+
+        for (int i = 0; i < 4; i++)
         {
-            int row = inox.front().first;
-            int col = inox.front().second;
+            int trow = row + r[i];
+            int tcol = col + c[i];
 
-            inox.pop();
-
-            if (row - 1 >= 0 && num[row - 1][col] == 1 && vis[row - 1][col] == 0)
+            if (trow >= 0 && trow < num.size() && tcol >= 0 && tcol < num[0].size() && num[trow][tcol] == 1 && store[trow][tcol] == 0)
             {
-                inox.push({row - 1, col});
-                vis[row - 1][col] = 1;
-            }
+                store[trow][tcol] = store[row][col] + 1;
+                inox.push({trow, tcol});
 
-            if (row + 1 < n && num[row + 1][col] == 1 && vis[row + 1][col] == 0)
-            {
-                inox.push({row + 1, col});
-                vis[row + 1][col] = 1;
+                max = std::max(max, store[trow][tcol]);
+                count2++;
             }
-
-            if (col - 1 >= 0 && num[row][col - 1] == 1 && vis[row][col - 1] == 0)
-            {
-                inox.push({row, col - 1});
-                vis[row][col - 1] = 1;
-            }
-
-            if (col + 1 < m && num[row][col + 1] == 1 && vis[row][col + 1] == 0)
-            {
-                inox.push({row, col + 1});
-                vis[row][col + 1] = 1;
-            }
-        }
-
-        if (inox.size())
-            count++;
-    }
-        
-        
-    bool ok = true;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            if (num[i][j] && vis[i][j] == 0)
-                count = -1;
-            if(num[i][j]) ok = false;
         }
     }
 
-     return (ok) ? 0 : count;        
+    if (count1 != count2)
+        max = -1;
+        
+    return max;       
     }
 };
