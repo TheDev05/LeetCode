@@ -36,9 +36,6 @@ public:
                         int trow = row + r[k];
                         int tcol = col + c[k];
 
-                        if (trow < 0 || trow >= n || tcol < 0 || tcol >= m)
-                            ok = false;
-
                         if (trow >= 0 && trow < n && tcol >= 0 && tcol < m)
                         {
                             if (vis[trow][tcol] == 0 && num[trow][tcol] == 'O')
@@ -46,7 +43,7 @@ public:
                                 vis[trow][tcol] = 1;
                                 test.push({trow, tcol});
                             }
-                        }
+                        }else ok = false;
                     }
                 }
 
