@@ -5,45 +5,42 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-bool check(std::vector<int> num[], std::vector<int> &vis, int start)
-{
-    std::queue<int> qt;
-
-    qt.push(start);
-    vis[start] = 1;
-
-    bool ok = false;
-    while (qt.size())
-    {
-        int inox = qt.front();
-        qt.pop();
-
-        int count = 0;
-        for (auto i : num[inox])
-        {
-            if (vis[i]) count++;
-            else
-            {
-                qt.push(i);
-                vis[i] = 1;
-            }
-        }
-        
-        if(count > 1) ok = true;
-    }
-
-    return ok;
-}
-
     // Function to detect cycle in an undirected graph.
     bool isCycle(int n, vector<int> num[]) {
+        
+        // Code here
     std::vector<int> vis(n, 0);
+    std::queue<int> inox;
 
     bool ok = false;
     for (int i = 0; i < n; i++)
     {
-        if (!vis[i])
-           ok |= check(num, vis, i);
+        if (vis[i] == 0)
+        {
+            inox.push(i);
+            vis[i] = 1;
+
+            while (inox.size())
+            {
+                int local = inox.front();
+                inox.pop();
+
+                int count = 0;
+                for (auto i : num[local])
+                {
+                    if (vis[i] == 0)
+                    {
+                        vis[i] = 1;
+                        inox.push(i);
+                    }
+                    else
+                        count++;
+                }
+
+                if (count > 1)
+                    ok = true;
+            }
+        }
     }
 
     return ok;
