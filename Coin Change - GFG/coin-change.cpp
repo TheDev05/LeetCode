@@ -10,18 +10,16 @@ class Solution {
 private:
     ll solve(int i, int sum, int n, int coins[], vector<vector<ll>> &dp) 
     {
-        if (sum == 0) return 1;
-        
-        if (i>=n )  return 0;
-        if (dp[i][sum] != -1) return dp[i][sum];
+        if (i>=n || sum<0)  return 0;
+        if (sum==0)         return 1;
+        if (dp[i][sum]!=-1)     return dp[i][sum];
     
-        ll take = 0, not_take = 0;
-        
-        if (sum - coins[i] >= 0)
-            take = solve(i, sum-coins[i], n, coins, dp);
+        ll take=0;
+        if (coins[i]<=sum)
+            take=solve(i,sum-coins[i],n,coins,dp);
         else return 0;
-        
-         not_take=solve(i+1, sum, n, coins, dp);
+      
+        ll not_take=solve(i+1,sum,n,coins,dp);
     
         return dp[i][sum] = take+not_take;
     }
@@ -29,9 +27,9 @@ private:
 public:
     long long int count(int coins[], int n, int sum) 
     {
-        std::sort(coins, coins + n);
+        sort(coins, coins + n);
         vector<vector<ll>> dp(n, vector<ll>(sum+1,-1));
-        
+      
         return solve(0,sum,n,coins,dp);
     }
 };
