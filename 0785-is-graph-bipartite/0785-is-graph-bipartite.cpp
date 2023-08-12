@@ -8,14 +8,15 @@ public:
     std::queue<int> temp;
 
     int color = 0;
+    bool ok = false;
 
-    for(int i = 0 ; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(inox[i] == -1)
+        if (inox[i] == -1)
         {
             temp.push(i);
-            inox[i] = color; 
-            
+            inox[i] = color;
+
             while (temp.size())
             {
                 int local = temp.front();
@@ -25,24 +26,17 @@ public:
                 {
                     if (inox[i] == -1)
                     {
-                        inox[i] = (inox[local]) ? 0 : 1;                
+                        inox[i] = (inox[local]) ? 0 : 1;
                         temp.push(i);
                     }
+                    else if (inox[i] == inox[local]) return false;
                 }
+
             }
         }
     }
 
-    bool ok = true;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < num[i].size(); j++)
-        {
-            if (inox[num[i][j]] == inox[i])
-                ok = false;
-        }
-    }
+    return true;   
         
-    return ok;        
     }
 };
