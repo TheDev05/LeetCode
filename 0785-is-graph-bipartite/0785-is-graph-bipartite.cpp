@@ -1,42 +1,36 @@
 class Solution {
 public:
-    bool isBipartite(vector<vector<int>>& num) {
+bool traverse(std::vector<std::vector<int>> &num, std::vector<int> &inox, int index)
+{
+    for (auto i : num[index])
+    {
+        if (inox[i] == -1)
+        {
+            inox[i] = (inox[index]) ? 0 : 1;
+            if (traverse(num, inox, i))
+                return true;
+        }
+        else if (inox[index] == inox[i])
+            return true;
+    }
+
+    return false;
+}
     
+    bool isBipartite(vector<vector<int>>& num) {
     int n = num.size();
         
     std::vector<int> inox(n, -1);
-    std::queue<int> temp;
-
-    int color = 0;
-    bool ok = false;
-
     for (int i = 0; i < n; i++)
     {
         if (inox[i] == -1)
         {
-            temp.push(i);
-            inox[i] = color;
-
-            while (temp.size())
-            {
-                int local = temp.front();
-                temp.pop();
-
-                for (auto i : num[local])
-                {
-                    if (inox[i] == -1)
-                    {
-                        inox[i] = (inox[local]) ? 0 : 1;
-                        temp.push(i);
-                    }
-                    else if (inox[i] == inox[local]) return false;
-                }
-
-            }
+            inox[i] = 0;
+            if (traverse(num, inox, i))
+                return false;
         }
     }
 
-    return true;   
-        
+    return true;        
     }
 };
