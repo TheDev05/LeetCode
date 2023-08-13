@@ -6,38 +6,41 @@ using namespace std;
 class Solution
 {
 	public:
-    void traverse(std::vector<int> num[], std::vector<int> &vis, std::stack<int> &st, int index)
-    {
-        vis[index] = 1;
-        for (auto i : num[index])
-        {
-            if (vis[i] == 0)
-                traverse(num, vis, st, i);
-        }
-    
-        st.push(index);
-    }
 
 	//Function to return list containing vertices in Topological order. 
 	vector<int> topoSort(int n, vector<int> num[]) 
 	{
 	    // code here
-    std::vector<int> vis(n, 0);
-    std::stack<int> st;
-
+    std::vector<int> indegree(n, 0);
     for (int i = 0; i < n; i++)
     {
-        if (vis[i] == 0)
-            traverse(num, vis, st, i);
+        for (auto j : num[i])
+            indegree[j]++;
+    }
+
+    std::queue<int> inox;
+    for (int i = 0; i < n; i++)
+    {
+        if (indegree[i] == 0)
+            inox.push(i);
     }
 
     std::vector<int> result;
-    while (st.size())
+    while (inox.size())
     {
-        result.push_back(st.top());
-        st.pop();
+        int local = inox.front();
+
+        result.push_back(local);
+        inox.pop();
+
+        for (auto i : num[local])
+        {
+            indegree[i]--;
+            if (indegree[i] == 0)
+                inox.push(i);
+        }
     }
-    
+
     return result;
     
 	}
