@@ -4,43 +4,45 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-public:
-bool traverse(std::vector<int> num[], int n, std::vector<int> &vis, std::vector<int> &path, int index)
-{
-    vis[index] = 1;
-    path[index] = 1;
-
-    for (auto i : num[index])
-    {
-        if (vis[i] == 0)
-        {
-            if (traverse(num, n, vis, path, i))
-                return true;
-        }
-        else if (path[i])
-            return true;
-    }
-
-    path[index] = 0;
-    return false;
-}
-
+  public:
     // Function to detect cycle in a directed graph.
     bool isCyclic(int n, vector<int> num[]) {
         // code here
-        
-    std::vector<int> vis(n, 0), path(n, -1);
+    std::vector<int> indeg(n, 0);
     for (int i = 0; i < n; i++)
     {
-        if (vis[i] == 0)
+        for (auto j : num[i])
+            indeg[j]++;
+    }
+
+    std::queue<int> inox;
+    for (int i = 0; i < n; i++)
+    {
+        if (indeg[i] == 0)
+            inox.push(i);
+    }
+
+    int count = 0;
+    while (inox.size())
+    {
+        int local = inox.front();
+
+        count++;
+        inox.pop();
+
+        for (auto i : num[local])
         {
-            if (traverse(num, n, vis, path, i))
-                return true;
+            indeg[i]--;
+            if (indeg[i] == 0)
+                inox.push(i);
         }
     }
 
+    if (count != n)
+        return true;
+
     return false;
-    }
+}
 };
 
 //{ Driver Code Starts.
