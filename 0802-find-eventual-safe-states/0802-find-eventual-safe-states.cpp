@@ -1,47 +1,51 @@
 class Solution {
 public:
-int traverse(std::vector<std::vector<int>> &num, std::vector<int> &vis, std::vector<int> &pathvis, int index)
-{
-    vis[index] = 1;
-    pathvis[index] = 1;
-
-    for (auto i : num[index])
-    {
-        if (vis[i] == 0)
-        {
-            if (traverse(num, vis, pathvis, i))
-                return 1;
-        }
-        else if (pathvis[i])
-            return 1;
-    }
-
-    pathvis[index] = 0;
-    return 0;
-}
-
-    
     vector<int> eventualSafeNodes(vector<vector<int>>& num) {
-    
     int n = num.size();
-        
-    std::vector<int> vis(n, 0), pathvis(n, 0);
+
+    std::vector<int> store[n];
     for (int i = 0; i < n; i++)
     {
-        if (vis[i] == 0)
+        for (int j = 0; j < num[i].size(); j++)
         {
-            traverse(num, vis, pathvis, i);
+            store[num[i][j]].push_back(i);
         }
+    }
+
+    std::vector<int> indeg(n, 0);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < store[i].size(); j++)
+        {
+            indeg[store[i][j]]++;
+        }
+    }
+
+    std::queue<int> inox;
+    for (int i = 0; i < n; i++)
+    {
+        if (indeg[i] == 0)
+            inox.push(i);
     }
 
     std::vector<int> result;
-    for (int i = 0; i < n; i++)
+    while (inox.size())
     {
-        if (pathvis[i] == 0)
-            result.push_back(i);
-    }
+        int local = inox.front();
+        inox.pop();
 
-    return result;       
+        result.push_back(local);
+
+        for (auto i : store[local])
+        {
+            indeg[i]--;
+            if (indeg[i] == 0)
+                inox.push(i);
+        }
+    }
+     
+    sort(result.begin(), result.end());
+    return result;
         
     }
 };
