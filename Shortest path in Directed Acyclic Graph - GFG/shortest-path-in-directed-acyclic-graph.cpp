@@ -8,7 +8,8 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-  void topoSort(int node, vector < pair < int, int >> adj[],
+  
+      void topoSort(int node, vector < pair < int, int >> adj[],
       int vis[], stack < int > & st) {
       //This is the function to implement Topological sort. 
       vis[node] = 1;
@@ -20,67 +21,61 @@ class Solution {
       }
       st.push(node);
     }
-    
-     vector<int> shortestPath(int N,int M, vector<vector<int>>& edges){
+
+     vector<int> shortestPath(int n,int m, vector<vector<int>>& num){
          
         // code here
-      vector < pair < int, int >> adj[N];
-      for (int i = 0; i < M; i++) {
-        int u = edges[i][0];
-        int v = edges[i][1];
-        int wt = edges[i][2];
-        adj[u].push_back({v, wt}); 
-      }
-      // A visited array is created with initially 
-      // all the nodes marked as unvisited (0).
-      int vis[N] = {
-        0
-      };
-      //Now, we perform topo sort using DFS technique 
-      //and store the result in the stack st.
-      stack < int > st;
-      for (int i = 0; i < N; i++) {
+    std::vector<std::pair<int, int>> store[n];
+    std::vector<int> indeg(n, 0);
+
+    for (int i = 0; i < m; i++)
+    {
+        store[num[i][0]].push_back({num[i][1], num[i][2]});
+    }
+
+    // 3 0 2 1
+    
+    int vis[n]={0};
+    
+    stack < int > st;
+      for (int i = 0; i < n; i++) {
         if (!vis[i]) {
-          topoSort(i, adj, vis, st);
+          topoSort(i, store, vis, st);
         }
       }
-      
-      //Further, we declare a vector ‘dist’ in which we update the value of the nodes’
-      //distance from the source vertex after relaxation of a particular node.
+   
+     std::vector<int> res;   
+     while(st.size())
+     {
+         res.push_back(st.top());
+         st.pop();
+     }
 
-      vector < int > dist(N);
-      for (int i = 0; i < N; i++) {
-        dist[i] = 1e9;
-      }
+    // for (auto i : res)
+    //     std::cout << i << " ";
 
-      dist[0] = 0;
-      
-      std::vector<int>inox;
-      while (!st.empty()) {
-        int node = st.top();
-        st.pop();
+    std::vector<int> dist(n, 1e6);
+    dist[0] = 0;
 
-       inox.push_back(node);
-      }
-      
-      for(int i=0;i<inox.size();i++)
-      {
-          int node=inox[i];
-          
-          for (auto it: adj[node]) {
+    for (int i = 0; i < n; i++)
+    {
+        int node = res[i];
+        
+        for (auto it: store[node]) {
           int v = it.first;
           int wt = it.second;
 
           if (dist[node] + wt < dist[v]) {
             dist[v] = wt + dist[node];
           }
-          }
-      }
-
-      for (int i = 0; i < N; i++) {
-        if (dist[i] == 1e9) dist[i] = -1;
-      }
+        }
       
+    }
+
+    for (auto &i : dist)
+        if (i == 1e6)
+            i = -1;
+            
       return dist;
     }
 };
