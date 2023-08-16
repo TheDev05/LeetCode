@@ -32,9 +32,9 @@ class Solution
             int node = it[0];
             int wt = it[1];
 
-            if (val + wt < dist[node])
+            if (dist[local] + wt < dist[node])
             {
-                dist[node] = val + wt;
+                dist[node] = dist[local] + wt;
                 inox.push({dist[node], node});
             }
         }
