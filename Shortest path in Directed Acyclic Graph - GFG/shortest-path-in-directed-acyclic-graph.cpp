@@ -61,13 +61,9 @@ class Solution {
     {
         int node = res[i];
         
-        for (auto it: store[node]) {
-          int v = it.first;
-          int wt = it.second;
+        for (auto j: store[node]) {
+        dist[j.first] = std::min(dist[j.first], dist[node] + j.second);
 
-          if (dist[node] + wt < dist[v]) {
-            dist[v] = wt + dist[node];
-          }
         }
       
     }
