@@ -8,38 +8,38 @@ class Solution
 	public:
 	//Function to find the shortest distance of all the vertices
     //from the source vertex S.
-    
-    vector <int> dijkstra(int v, vector<vector<int>> adj[], int src)
+    vector <int> dijkstra(int v, vector<vector<int>> num[], int src)
     {
         // Code here
-        
-            std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> inox;
     std::vector<int> dist(v, 1e5 + 1);
+    std::set<std::pair<int, int>> inox;
 
-    // dist, node
-    inox.push({0, src});
+    inox.insert({0, src});
     dist[src] = 0;
 
     while (inox.size())
     {
-        int local = inox.top().second;
-        int val = inox.top().first;
+        int node = inox.begin()->second;
+        int wt = inox.begin()->first;
 
-        inox.pop();
+        inox.erase(inox.begin());
 
-        for (auto it : adj[local])
+        for (auto it : num[node])
         {
-            int node = it[0];
-            int wt = it[1];
+            int adj_node = it[0];
+            int adj_wt = it[1];
 
-            if (dist[local] + wt < dist[node])
+            if (dist[node] + adj_wt < dist[adj_node])
             {
-                dist[node] = dist[local] + wt;
-                inox.push({dist[node], node});
+                if (inox.count({dist[adj_node], adj_node}))
+                    inox.erase({dist[adj_node], adj_node});
+
+                dist[adj_node] = dist[node] + adj_wt;
+                inox.insert({dist[adj_node], adj_node});
             }
         }
     }
-    
+
     return dist;
     
     }
