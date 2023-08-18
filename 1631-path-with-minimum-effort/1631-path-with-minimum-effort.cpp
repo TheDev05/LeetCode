@@ -24,6 +24,8 @@ public:
 
         int row = it.second.first;
         int col = it.second.second;
+        
+        if(row == n-1 && col == m-1) break;
 
         for (int j = 0; j < 4; j++)
         {
