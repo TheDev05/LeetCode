@@ -66,13 +66,14 @@ public:
         }
     }
 
-    std::set<int> inox;
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
-        inox.insert(ds.getParent(i));
+        if (i == ds.getParent(i))
+            count++;
     }
 
-    return inox.size();    
+    return count;    
         
     }
 };
