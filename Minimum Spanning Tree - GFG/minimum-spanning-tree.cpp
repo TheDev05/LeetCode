@@ -54,37 +54,45 @@ public:
     }
 };
 
-    int spanningTree(int V, vector<vector<int>> adj[])
+    int spanningTree(int n, vector<vector<int>> adj[])
     {
         // code here
         
-        vector<pair<int, pair<int, int>>> edges;
-        for (int i = 0; i < V; i++) {
-            for (auto it : adj[i]) {
-                int adjNode = it[0];
-                int wt = it[1];
-                int node = i;
+    dsu ds(n);
+    std::vector<std::pair<int, std::pair<int, int>>> num;
 
-                edges.push_back({wt, {node, adjNode}});
-            }
+    for (int i = 0; i < n; i++)
+    {
+        for (auto j : adj[i])
+        {
+            int adjNode = j[0];
+            int adjWt = j[1];
+            int node = i;
+            
+            num.push_back({adjWt, {node, adjNode}});
         }
-        
-        dsu ds(V);
-        sort(edges.begin(), edges.end());
-        
-        int mstWt = 0;
-        for (auto it : edges) {
-            int wt = it.first;
-            int u = it.second.first;
-            int v = it.second.second;
+    }
 
-            if (ds.getParent(u) != ds.getParent(v)) {
-                mstWt += wt;
-                ds.getUnion(u, v);
-            }
+    std::sort(num.begin(), num.end());
+
+    int sum = 0;
+    for (auto i: num)
+    {
+        int adjWt = i.first;
+        int node = i.second.first;
+        int adjNode = i.second.second;
+
+        if (ds.getParent(node) != ds.getParent(adjNode))
+        {
+            ds.getUnion(node, adjNode);
+            sum += adjWt;
         }
+    }
 
-        return mstWt;
+    return sum;
+    
+    // ***
+
     
     }
 };
