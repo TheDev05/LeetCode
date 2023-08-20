@@ -49,23 +49,18 @@ public:
     if(num.size() < n - 1) return -1;
     dsu ds(n);
 
+    int NotValid = 0, Valid = 0;
     for (int i = 0; i < num.size(); i++)
     {
         int u = num[i][0];
         int v = num[i][1];
 
         if (ds.getParent(u) != ds.getParent(v))
-            ds.setUnion(u, v);
+        { ds.setUnion(u, v); Valid++; }
+        else NotValid++;
     }
 
-    int count = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (ds.getParent(i) == i)
-            count++;
-    }
-
-    return count - 1; 
+    return NotValid - abs((n-1) -(Valid + NotValid)); 
         
     }
 };
