@@ -7,46 +7,84 @@ class Solution
 {
 	public:
 	//Function to find sum of weights of edges of the Minimum Spanning Tree.
-    int spanningTree(int n, vector<vector<int>> adj[])
+   
+class dsu
+{
+    std::vector<int> parent, cmp_size;
+
+public:
+    dsu(int n)
     {
-        // code here
-    std::priority_queue<std::pair<int, std::pair<int, int>>, std::vector<std::pair<int, std::pair<int, int>>>, greater<std::pair<int, std::pair<int, int>>>> inox;
+        cmp_size.resize(n + 1, 0);
+        parent.resize(n + 1, 0);
 
-    std::vector<int> vis(n, 0);
-    std::vector<std::pair<int, int>> mst;
-
-    // {wt, node, parent}
-    
-    inox.push({0, {0, -1}});
-    int sum = 0;
-
-    while (inox.size())
-    {
-        auto it = inox.top();
-        inox.pop();
-
-        int node = it.second.first;
-        int parent = it.second.second;
-        int wt = it.first;
-
-        if (vis[node])
-            continue;
-
-        vis[node] = 1;
-        sum += wt;
-        mst.push_back({parent, node});  
-
-        for (auto i : adj[node])
+        for (int i = 0; i < n + 1; i++)
         {
-            int adjNode = i[0];
-            int adjWt = i[1];
-
-            if (vis[adjNode] == 0)
-                inox.push({adjWt, {adjNode, node}});
+            parent[i] = i;
+            cmp_size[i] = 1;
         }
     }
 
-    return sum;
+    int getParent(int vertex)
+    {
+        if (parent[vertex] == vertex)
+            return vertex;
+
+        return parent[vertex] = getParent(parent[vertex]);
+    }
+
+    void getUnion(int u, int v)
+    {
+        int parent_u = getParent(u);
+        int parent_v = getParent(v);
+
+        if (parent_u == parent_v)
+            return;
+
+        if (cmp_size[parent_u] > cmp_size[parent_v])
+        {
+            parent[parent_v] = parent_u;
+            cmp_size[parent_u] += cmp_size[parent_v];
+        }
+        else
+        {
+            parent[parent_u] = parent_v;
+            cmp_size[parent_v] += cmp_size[parent_u];
+        }
+    }
+};
+
+    int spanningTree(int V, vector<vector<int>> adj[])
+    {
+        // code here
+        
+        vector<pair<int, pair<int, int>>> edges;
+        for (int i = 0; i < V; i++) {
+            for (auto it : adj[i]) {
+                int adjNode = it[0];
+                int wt = it[1];
+                int node = i;
+
+                edges.push_back({wt, {node, adjNode}});
+            }
+        }
+        
+        dsu ds(V);
+        sort(edges.begin(), edges.end());
+        
+        int mstWt = 0;
+        for (auto it : edges) {
+            int wt = it.first;
+            int u = it.second.first;
+            int v = it.second.second;
+
+            if (ds.getParent(u) != ds.getParent(v)) {
+                mstWt += wt;
+                ds.getUnion(u, v);
+            }
+        }
+
+        return mstWt;
     
     }
 };
