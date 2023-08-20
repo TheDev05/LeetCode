@@ -1,49 +1,78 @@
 class Solution {
 public:
+    
+class dsu
+{
+    std::vector<int> parent, cmp_size;
+
+public:
+    dsu(int n)
+    {
+        parent.resize(n + 1, 0);
+        cmp_size.resize(n + 1, 0);
+
+        for (int i = 0; i < parent.size(); i++)
+        {
+            parent[i] = i;
+            cmp_size[i] = 1;
+        }
+    }
+
+    int getParent(int u)
+    {
+        if (parent[u] == u)
+            return u;
+
+        return parent[u] = getParent(parent[u]);
+    }
+
+    void setUnion(int u, int v)
+    {
+        int parent_u = parent[u];
+        int parent_v = parent[v];
+
+        if (parent_u == parent_v)
+            return;
+
+        if (cmp_size[parent_u] < cmp_size[parent_v])
+        {
+            parent[parent_u] = parent_v;
+            cmp_size[parent_v] += cmp_size[parent_u];
+        }
+        else
+        {
+            parent[parent_v] = parent_u;
+            cmp_size[parent_u] += cmp_size[parent_v];
+        }
+    }
+};
+
     int findCircleNum(vector<vector<int>>& num) {
     
     int n = num.size();
-    std::vector<int> adj[n + 1];
+    dsu ds(n);
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            if (i != j && num[i][j])
-                adj[i + 1].push_back(j + 1);
-        }
-    }
-
-    std::vector<int> visited(n + 1, 0);
-
-    int count = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        if (!visited[i])
-        {
-            count++;
-            std::queue<int> inox;
-
-            visited[i] = 1;
-            inox.push(i);
-
-            while (inox.size())
+            if (num[i][j])
             {
-                int temp = inox.front();
-                inox.pop();
-
-                for (auto j : adj[temp])
+                if (ds.getParent(i) != ds.getParent(j))
                 {
-                    if (!visited[j])
-                    {
-                        visited[j] = 1;
-                        inox.push(j);
-                    }
+                    ds.setUnion(i, j);
                 }
             }
         }
     }
 
-    return count; 
+    std::set<int> inox;
+    for (int i = 0; i < n; i++)
+    {
+        inox.insert(ds.getParent(i));
+    }
+
+    return inox.size();    
         
     }
 };
