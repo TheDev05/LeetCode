@@ -1,47 +1,47 @@
 class Solution {
 public:
-int findCheapestPrice(int n, vector<vector<int>>& adj, int src, int dst, int k) {
-    
+    int findCheapestPrice(int n, vector<vector<int>>& adj, int src, int target, int min_stops) {
+        
     std::vector<std::pair<int, int>> num[n];
     for (int i = 0; i < adj.size(); i++)
     {
         num[adj[i][0]].push_back({adj[i][1], adj[i][2]});
     }
+        
+    std::vector<int> dist(n, INT_MAX);
+    std::priority_queue<std::pair<std::pair<int, int>, int>, std::vector<std::pair<std::pair<int, int>, int>>, greater<std::pair<std::pair<int, int>, int>>> pq;
 
-    std::queue<std::pair<int, std::pair<int, int>>> inox;
-
-    std::vector<int> stops(n, 1e7);
-    std::vector<int> dist(n, 1e7);
-
-    inox.push({src, {0, 0}});
     dist[src] = 0;
+    pq.push({{0, 0}, src});
 
-    while (inox.size())
+    // stops, dist, node
+
+    while (pq.size())
     {
-        int node = inox.front().first;
-        int len = inox.front().second.first;
-        int val = inox.front().second.second;
+        auto it = pq.top();
+        pq.pop();
 
-        inox.pop();
+        int stops = it.first.first;
+        int wt = it.first.second;
+        int node = it.second;
 
-        if(len > k) continue;
+        if (stops > min_stops)
+            continue;
+
         for (auto i : num[node])
         {
             int adjNode = i.first;
-            int adjLen = i.second;
+            int adjWt = i.second;
 
-            if (val + adjLen < dist[adjNode] )
+            if (wt + adjWt < dist[adjNode])
             {
-                dist[adjNode] = val + adjLen;
-                stops[adjNode] = len + 1;
-
-                inox.push({adjNode, {stops[adjNode], dist[adjNode]}});
+                dist[adjNode] = wt + adjWt;
+                pq.push({{stops + 1, dist[adjNode]}, adjNode});
             }
         }
     }
-    
-    if(dist[dst] == 1e7) return -1;
-    
-    return dist[dst];
+        
+    if(dist[target] == INT_MAX) return -1;
+    return dist[target];         
     }
 };
