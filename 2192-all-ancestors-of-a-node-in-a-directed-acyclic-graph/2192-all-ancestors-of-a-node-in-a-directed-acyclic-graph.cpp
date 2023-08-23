@@ -1,5 +1,6 @@
 class Solution {
 public:
+    
 void getPack(int j, std::set<int> &temp, std::vector<int> local[], std::set<int> &vis)
 {
     temp.insert(j);
