@@ -25,7 +25,7 @@ void traverse(std::vector<int> adj[], int index, int &resIndex, std::vector<int>
         adj[num[i][1]].push_back(num[i][0]);
     }
 
-    std::vector<int> res, vis(n, 0);
+    std::vector<int> res;
     for (int i = 0; i < n; i++)
     {
         int val = INT_MAX, resIndex = i;
