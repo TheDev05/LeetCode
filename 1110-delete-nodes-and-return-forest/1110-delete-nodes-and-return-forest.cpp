@@ -26,12 +26,10 @@ TreeNode *traverse(TreeNode *root, std::set<int> &remove, std::queue<TreeNode *>
         return NULL;
     }
 
-    TreeNode *left = traverse(root->left, remove, inox);
-    TreeNode *right = traverse(root->right, remove, inox);
-
     TreeNode *temp = root;
-    root->left = left;
-    root->right = right;
+    
+    root->left = traverse(root->left, remove, inox);
+    root->right = traverse(root->right, remove, inox);
 
     return root;
 }
