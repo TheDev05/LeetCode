@@ -1,32 +1,28 @@
 class Solution {
 public:
-int traverse(std::vector<int> &num, std::vector<std::vector<int>> &storage, int k)
+int traverse(std::vector<int> &num, std::vector<std::vector<int>> &storage, int target)
 {
-    if (k == 0)
+    if (target == 0)
         return 1;
 
-    int val = 0;
+    if (target < 0)
+        return 0;
+
+    int count = 0;
     for (int i = 0; i < num.size(); i++)
     {
-        if (k - num[i] >= 0)
-        {
-            if (storage[i][k - num[i]] == -1)
-                storage[i][k - num[i]] = traverse(num, storage, k - num[i]);
+        if (storage[i][target] == -1)
+            storage[i][target] = traverse(num, storage, target - num[i]);
 
-            val += storage[i][k - num[i]];
-        }
-        else
-            break;
+        count += storage[i][target];
     }
 
-    return val;
+    return count;
 }
-    
-    int combinationSum4(vector<int>& num, int k) {
-        
-    std::sort(num.begin(), num.end());
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(k + 1, -1));
-    return traverse(num, storage, k);
-        
+
+    int combinationSum4(vector<int>& num, int target) {
+
+    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(target + 1, -1));
+    return traverse(num, storage, target);       
     }
 };
