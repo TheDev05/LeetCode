@@ -24,7 +24,7 @@ int traverse(TreeNode *root)
     {
         int size = inox.size();
 
-        std::vector<int> temp1, temp2;
+        std::vector<int> temp2;
         for (int i = 0; i < size; i++)
         {
             auto it = inox.front();
@@ -35,27 +35,30 @@ int traverse(TreeNode *root)
             if (it->right)
                 inox.push(it->right);
 
-            temp1.push_back(it->val);
             temp2.push_back(it->val);
         }
 
-        std::sort(temp1.begin(), temp1.end());
-        std::map<int,int>data;
+        std::map<int,int>data;        
+        for(int i = 0;i<temp2.size();i++) data[temp2[i]] = i;  
         
-        for(int i = 0;i<temp2.size();i++) data[temp2[i]] = i;     
-        for (int i = 0; i < temp1.size(); i++)
+        for (int i = 0; i < temp2.size(); i++)
         {
-            if (temp1[i] != temp2[i])
+            auto it = data.begin();
+            int val = it->first;
+                        
+            if (val != temp2[i])
             {
-                int t1=temp1[i];
+                int t1=val;
                 int t2=temp2[i];
                 
                 count++;
-                std::swap(temp2[data[temp1[i]]], temp2[i]);
+                std::swap(temp2[data[val]], temp2[i]);
                         
                 data[t2] = data[t1];
                 data[t1] = i;
             }
+            
+            data.erase(data.begin());
         }
     }
 
