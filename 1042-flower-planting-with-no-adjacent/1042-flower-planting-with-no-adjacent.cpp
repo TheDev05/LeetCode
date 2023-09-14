@@ -47,9 +47,6 @@ public:
             }
         }
     }
-
-    for (auto i : plants)
-        std::cout << i << " ";
         
     return plants;
     }
