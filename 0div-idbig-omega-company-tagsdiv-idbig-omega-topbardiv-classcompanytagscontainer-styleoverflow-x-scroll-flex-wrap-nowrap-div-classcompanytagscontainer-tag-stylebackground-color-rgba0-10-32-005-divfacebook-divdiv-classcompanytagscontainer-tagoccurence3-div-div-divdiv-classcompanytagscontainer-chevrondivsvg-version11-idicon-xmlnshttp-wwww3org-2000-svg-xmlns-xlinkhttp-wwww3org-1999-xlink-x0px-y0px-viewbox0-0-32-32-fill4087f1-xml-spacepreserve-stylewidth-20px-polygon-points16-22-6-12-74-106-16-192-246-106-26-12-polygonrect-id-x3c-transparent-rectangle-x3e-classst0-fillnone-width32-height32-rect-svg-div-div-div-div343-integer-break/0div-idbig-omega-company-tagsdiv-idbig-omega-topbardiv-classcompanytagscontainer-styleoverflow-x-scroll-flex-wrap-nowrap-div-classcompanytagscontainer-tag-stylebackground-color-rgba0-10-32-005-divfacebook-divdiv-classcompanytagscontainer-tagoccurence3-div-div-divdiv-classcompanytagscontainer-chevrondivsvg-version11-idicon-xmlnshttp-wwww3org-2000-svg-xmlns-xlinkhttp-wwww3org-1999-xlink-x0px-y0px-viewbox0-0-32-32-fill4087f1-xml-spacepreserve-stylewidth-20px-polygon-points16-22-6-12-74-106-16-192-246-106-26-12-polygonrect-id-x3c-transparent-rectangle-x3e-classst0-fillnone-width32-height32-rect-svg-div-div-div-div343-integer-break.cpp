@@ -1,33 +1,31 @@
 class Solution {
 public:
-void traverse(int n, int &max, int prod, int sum, int index)
+int traverse(std::vector<std::vector<int>> &storage, int n, int index, int k)
 {
-    if (index >= n)
-        return;
-    
-    if (sum == n)
+    if (n == 0)
+        return 1;
+
+    if (index >= k)
+        return 0;
+
+    if (storage[index][n] == -1)
     {
-        max = std::max(max, prod);
-        return;
+        int val1 = 0, val2 = 0;
+        if (n - index >= 0)
+            val1 = index * traverse(storage, n - index, index, k);
+        else
+            return storage[index][n] = 0;
+
+        val2 = traverse(storage, n, index + 1, k);
+
+        storage[index][n] = std::max(val1, val2);
     }
 
-    if (sum + index <= n)
-    {
-        prod *= index;
-        traverse(n, max, prod, sum + index, index);
-        prod /= index;
-    }
-    else
-        return;
-
-    traverse(n, max, prod, sum, index + 1);
+    return storage[index][n];
 }
     
     int integerBreak(int n) {
-        
-    int max = 0;
-    traverse(n, max, 1, 0, 1);
-
-    return max;        
+    std::vector<std::vector<int>> storage(n + 1, std::vector<int>(n + 1, -1));
+    return traverse(storage, n, 1, n);   
     }
 };
