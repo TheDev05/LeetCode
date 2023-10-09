@@ -76,19 +76,17 @@ public:
         }
     }
 
-    std::set<int> count;
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            if (vis[i][j])
-            {
-                int temp = (((i + 1) - 1) * m) + j;
-                count.insert(ds.parent[temp]);
-            }
+            int temp = (((i + 1) - 1) * m) + j;
+            if (vis[i][j] && ds.parent[temp] == temp)
+                count++;
         }
     }
 
-    return count.size();        
+    return count;        
     }
 };
