@@ -11,31 +11,28 @@
  */
 class Solution {
 public:
-int traverse(TreeNode *root, int &count, int &sum)
+std::pair<int, int> traverse(TreeNode *root, int &count)
 {
     if (root == NULL)
-        return 0;
-    else
+        return {0, 0};
+
+    auto it1 = traverse(root->left, count);
+    auto it2 = traverse(root->right, count);
+
+    int sum = it1.first + it2.first + root->val;
+    int nodes = it1.second + it2.second + 1;
+
+    int avg = sum / nodes;
+    if (avg == root->val)
         count++;
 
-    int temp = count;
-
-    int left = traverse(root->left, count, sum);
-    int right = traverse(root->right, count, sum);
-
-    int total = left + right + root->val;
-    int delta = (count - temp) + 1;
-
-    if (delta != 0 && total / delta == root->val)
-        sum++;
-
-    return left + right + root->val;
+    return {sum, nodes};
 }
+    
     int averageOfSubtree(TreeNode* root) {
-        
-    int sum = 0, count = 0;
-    traverse(root, count, sum);
+    int count = 0;
+    traverse(root, count);
 
-    return sum;        
+    return count;        
     }
 };
