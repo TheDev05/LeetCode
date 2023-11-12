@@ -24,11 +24,10 @@ public:
             
         while(inox.size())
         {
-            auto it=inox.top();
+            auto [val, node] = inox.top();
             inox.pop();
             
-            int node=it.second;
-            int val=it.first;
+            if(node == node2) return val;
             
             for(auto i: num[node])
             {
@@ -41,7 +40,7 @@ public:
         }
         
         
-        return (dist[node2] == INT_MAX) ? -1 : dist[node2];
+        return -1;
     }
 };
 
