@@ -5,21 +5,21 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> digits = "23"
+<pre><strong>Input:</strong> digits = "23"
 <strong>Output:</strong> ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> digits = ""
+<pre><strong>Input:</strong> digits = ""
 <strong>Output:</strong> []
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> digits = "2"
+<pre><strong>Input:</strong> digits = "2"
 <strong>Output:</strong> ["a","b","c"]
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
