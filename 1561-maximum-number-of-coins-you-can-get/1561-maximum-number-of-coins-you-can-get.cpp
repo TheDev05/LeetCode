@@ -1,28 +1,12 @@
-/*
- * @lc app=leetcode id=1561 lang=cpp
- *
- * [1561] Maximum Number of Coins You Can Get
- */
-
-// @lc code=start
-class Solution
-{
+class Solution {
 public:
-    int maxCoins(vector<int> &piles)
-    {
-        sort(piles.begin(), piles.end(), greater<>());
-        int sum = 0, size = piles.size() / 3,index=0;
-
-        for (int i = 0; index<size; i++)
-        {
-            if (i & 1)
-            {
-                sum += piles[i];
-                index++;
-            }
-        }
-
-        return (sum);
+    int maxCoins(vector<int>& num) {
+        ranges::sort(num, greater());        
+        int sum=0, count = num.size()/3;
+        
+        for(int i=0;i<num.size();i++)
+            if((i&1) && count) sum+=num[i], count--;
+                
+        return sum;
     }
 };
-// @lc code=end
