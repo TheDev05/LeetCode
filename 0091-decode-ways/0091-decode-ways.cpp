@@ -1,28 +1,30 @@
 class Solution {
 public:
-
-    int numDecodings(string text) {
-    std::vector<int> storage(text.size() + 1, 0);
-    
-    storage[text.size()] = 1;
-    for (int i = text.size() - 1; i >= 0; i--)
+    int traverse(std::string text, std::vector<int>&dp, int index)
     {
-        std::string temp;
-
-        int val1 = 0;
-        for (int j = i; j < text.size(); j++)
+        if(text[index] == '0') return 0;
+        if(index >= text.size()) return 1;
+        
+        if(dp[index] == -1)
         {
-            temp += text[j];
-            if (temp.size() < 3 && stoi(temp) == 0)
-                break;
-            if (temp.size() < 3 && stoi(temp) < 27)
-                val1 += storage[j + 1];
+            int sum = 0, temp = 0;
+            for(int i = index; i < text.size(); i++)
+            {
+                int val = (int)(text[i] - '0');
+                temp = (temp * 10) + val;
+                            
+                if(temp < 27) sum += traverse(text, dp, i + 1);
+                else break;
+            }
+            
+            dp[index] = sum;
         }
 
-        storage[i] = val1;
+        return dp[index];
     }
-
-    return storage[0];
-
+    
+    int numDecodings(string s) {
+       std::vector<int>dp(s.size() + 1, -1);
+       return traverse(s, dp, 0);
     }
 };
