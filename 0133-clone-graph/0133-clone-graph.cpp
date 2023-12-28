@@ -4,17 +4,14 @@ class Node {
 public:
     int val;
     vector<Node*> neighbors;
-    
     Node() {
         val = 0;
         neighbors = vector<Node*>();
     }
-    
     Node(int _val) {
         val = _val;
         neighbors = vector<Node*>();
     }
-    
     Node(int _val, vector<Node*> _neighbors) {
         val = _val;
         neighbors = _neighbors;
@@ -24,49 +21,50 @@ public:
 
 class Solution {
 public:
-    Node* cloneGraph(Node* node) {
+    
+    Node* traverse(Node* node)
+    {        
+        if(node == NULL) return node;
         
-    if(node == NULL) return {};
-             
-    std::queue<Node*>inox;
-    inox.push(node);
+        std::queue<Node*>inox;
+        inox.push(node);
         
-    std::map<int, Node*>data; 
-    data[node->val] = new Node(node->val);
-
-    while(inox.size())
-    {
-        int size = inox.size();
-        std::vector<Node*>temp;
+        std::set<Node*>vis;
+        std::map<int, Node*>data;
         
-        for(int i=0;i<size;i++)
-        {
-            auto it=inox.front();
-            inox.pop();
-                        
-            for(auto i: it->neighbors)
-            {
-                if(data.count(i->val) == false)
-                {
-                    Node* newNode = new Node(i->val);
-                    data[newNode->val] = newNode;
-                    
-                    inox.push(i);
-                }
-                           
-                temp.push_back(data[i->val]);
+        Node* newNode = new Node(node->val);
+        data[node->val] = newNode;
                 
-            } 
-                        
-            if(data[it->val]->neighbors.empty())
+        while(inox.size())
+        {
+            auto it = inox.front(); 
+            inox.pop();
+            
+            vis.insert(it);
+              
+            std::vector<Node*>temp;
+            for(int i=0;i<it->neighbors.size();i++)
             {
-                data[it->val]->neighbors = temp;
-                temp.clear();
-            }      
-        }       
+                if(vis.count(it->neighbors[i]) == false)
+                {
+                    inox.push(it->neighbors[i]);
+                    vis.insert(it->neighbors[i]);
+                
+                    Node* newTemp = new Node(it->neighbors[i]->val);
+                    data[it->neighbors[i]->val] = newTemp;
+                    temp.push_back(newTemp);
+                
+                 }else
+                temp.push_back(data[it->neighbors[i]->val]);
+            }
+            
+            data[it->val]->neighbors=temp;
+        }
+        
+      return data[node->val];  
     }
-        
-    return data[1];
-        
+    
+    Node* cloneGraph(Node* node) {
+      return traverse(node); 
     }
 };
