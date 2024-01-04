@@ -1,6 +1,7 @@
 class Solution {
 public:
     int minOperations(vector<int>& num) {
+        
     std::map<int, int> data;
     for (auto i : num)
         data[i]++;
@@ -8,13 +9,11 @@ public:
     int count = 0;
     for (auto i : data)
         if (i.second == 1)
-        {
-            count = -1;
-            break;
-        }
+            return -1;
         else
             count += ceil((double)i.second / 3);
 
-    return count;        
+    return count;   
+        
     }
 };
