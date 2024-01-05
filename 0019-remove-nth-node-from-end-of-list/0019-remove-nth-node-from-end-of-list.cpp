@@ -15,34 +15,41 @@ public:
         
     if(head->next == NULL)
     return NULL;
-        
-    std::map<int, ListNode *> data;
-    ListNode *temp = head;
+    ListNode *prev = NULL, *next = NULL;
 
-    int count = 1;
-    while (temp)
+    ListNode *first = head, *last = head;
+    int firstIndex = 1, lastIndex = 1;
+
+    while (last)
     {
-        data[count] = temp;
+        if (lastIndex - firstIndex == index)
+        {
+            if (last->next == NULL)
+            {
+                prev = first;
+                break;
+            }
 
-        temp = temp->next;
-        count++;
+            last = last->next;
+            first = first->next;
+
+            lastIndex++;
+            firstIndex++;
+        }
+        else
+            lastIndex++,
+                last = last->next;
     }
 
-    int size = count - 1;
-    ListNode *prev = NULL;
-    ListNode *next = NULL;
+    if(prev == NULL)
+        return head->next;
 
-    if(data.contains(size - index))
-        prev = data[size - index];
+    if (prev->next && prev->next->next)
+        next = prev->next->next;
 
-    if (auto it = (size - index) + 2; data.contains(it))
-        next = data[it];
-
-    if(prev && next || prev)
-       prev->next = next;
-    else if(next)
-       head = head->next;
-
+    if (prev && next || prev)
+        prev->next = next;
+        
     return head;
         
     }
