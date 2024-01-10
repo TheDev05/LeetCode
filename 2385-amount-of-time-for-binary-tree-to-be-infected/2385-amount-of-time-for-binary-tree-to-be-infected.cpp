@@ -11,84 +11,61 @@
  */
 class Solution {
 public:
-void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parent, TreeNode *&init, int start)
+TreeNode *traverse(TreeNode *root, int key, std::map<TreeNode *, TreeNode *> &data)
 {
     if (root == NULL)
-        return;
+        return NULL;
 
-    std::queue<TreeNode *> inox;
-    inox.push(root);
+    if (root->left)
+        data[root->left] = root;
+    if (root->right)
+        data[root->right] = root;
 
-    while (inox.size())
-    {
-        int size = inox.size();
-        for (int i = 0; i < size; i++)
-        {
-            auto it = inox.front();
-            inox.pop();
+    TreeNode *temp = NULL;
+    if (key == root->val)
+        temp = root;
 
-            if (it->left)
-            {
-                parent[it->left] = it;
-                inox.push(it->left);
-            }
+    TreeNode *left = traverse(root->left, key, data);
+    TreeNode *right = traverse(root->right, key, data);
 
-            if (it->right)
-            {
-                inox.push(it->right);
-                parent[it->right] = it;
-            }
-
-            if (it->val == start)
-                init = it;
-        }
-    }
+    return (temp ? temp : left ? left
+                      : right  ? right
+                               : NULL);
 }
     
-    int amountOfTime(TreeNode* root, int start) {
+    int amountOfTime(TreeNode* root, int key) {
         
-    std::map<TreeNode *, TreeNode *> parent;
-    TreeNode *init = NULL;
-
-    traverse(root, parent, init, start);
+    std::map<TreeNode *, TreeNode *> data;
+    data[root] = NULL;
+        
+    TreeNode *target = traverse(root, key, data);
 
     std::queue<TreeNode *> inox;
-    std::set<TreeNode *> vis;
-
-    inox.push(init);
-    vis.insert(init);
-
-    int count = 0;
+    inox.push(target);
+        
+    int count = -1;
     while (inox.size())
     {
-        int size = inox.size();
         count++;
-
+        
+        int size = inox.size();
         for (int i = 0; i < size; i++)
         {
             auto it = inox.front();
             inox.pop();
             
-            if (it->left && vis.count(it->left) == false)
-            {
+            if (data[it] && data.contains(data[it]))
+                inox.push(data[it]);
+
+            if (it->left && data.contains(it->left))
                 inox.push(it->left);
-                vis.insert(it->left);
-            }
-
-            if (it->right && vis.count(it->right) == false)
-            {
+            if (it->right && data.contains(it->right))
                 inox.push(it->right);
-                vis.insert(it->right);
-            }
 
-            if (parent[it] && vis.count(parent[it]) == false)
-            {
-                inox.push(parent[it]);
-                vis.insert(parent[it]);
-            }
-        }
+            data.erase(it);
+        }        
     }
-
-    return count - 1;        
+        
+    return count;
     }
 };
