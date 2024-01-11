@@ -11,35 +11,29 @@
  */
 class Solution {
 public:
-void traverse(TreeNode *root, int &delta, int &max, int &min)
+std::pair<int, int> traverse(TreeNode *root, int &max)
 {
     if (root == NULL)
-        return;
+        return {INT_MAX, INT_MIN};
 
-    if (max >= 0)
-    {
-        delta = std::max(delta, abs(max - (root->val)));
-        delta = std::max(delta, abs(min - (root->val)));
-    }
+    auto left = traverse(root->left, max);
+    auto right = traverse(root->right, max);
 
-    int temp1 = max, temp2 = min;
-    max = std::max(max, root->val);
-    min = std::min(min, root->val);
+    int mini = std::min(left.first, right.first);
+    if (mini != INT_MAX)
+        max = std::max(max, std::abs(mini - root->val));
 
-    traverse(root->left, delta, max, min);
-    traverse(root->right, delta, max, min);
+    int maxi = std::max(left.second, right.second);
+    if (maxi != INT_MIN)
+        max = std::max(max, std::abs(maxi - root->val));
 
-    max = temp1;
-    min = temp2;
-
-    return;
+    return {std::min(mini, root->val), std::max(root->val, maxi)};
 }
     
     int maxAncestorDiff(TreeNode* root) {
-        
-    int delta = 0, max = -1, min = INT_MAX;
-    traverse(root, delta, max, min);
-    
-    return delta;
+    int max = 0;
+    traverse(root, max);
+
+    return max;        
     }
 };
