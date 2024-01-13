@@ -2,35 +2,23 @@ class Solution {
 public:
     int minSteps(string text1, string text2) {
         
-    std::map<char, int> data1, data2;
-    for (auto i : text1)
-        data1[i]++;
-
-    for (auto i : text2)
-        data2[i]++;
+    std::vector<int> data(26, 0);
+    for (int i = 0; i < text1.size(); i++)
+    {
+        data[(int)text1[i] - (int)'a']++;
+    }
 
     int sum = 0;
-    for (auto i : text2)
+    for (int i = 0; i < text2.size(); i++)
     {
-        if (data1.contains(i))
-        {
-            if (--data1[i] == 0)
-                data1.erase(i);
-        }
+        if (data[(int)text2[i] - (int)'a'] > 0)
+            data[(int)text2[i] - (int)'a']--;
         else
             sum++;
     }
 
-    for (auto i : text1)
-    {
-        if (data2.contains(i))
-        {
-            if (--data2[i] == 0)
-                data2.erase(i);
-        }
-        else
-            sum++;
-    }
+    sum += accumulate(begin(data), end(data), 0);
+    std::cout << sum;
 
     return sum;        
     }
