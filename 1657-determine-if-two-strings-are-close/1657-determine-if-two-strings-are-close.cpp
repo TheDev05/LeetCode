@@ -1,42 +1,39 @@
 class Solution {
 public:
-    bool closeStrings(string word1, string word2) {
-        map<char,int>left,right;
-        map<int,int>data;
+    
+    bool traverse(std::map<char, int> &data1, std::map<char, int> &data2)
+    {
+        for (auto i : data1)
+            if (data2.contains(i.first) == false)
+                return false;
+
+        for (auto i : data2)
+            if (data1.contains(i.first) == false)
+                return false;
+
+        std::map<int, int> temp1, temp2;
+        for (auto i : data1)
+            temp1[i.second]++;
+
+        for (auto i : data2)
+            temp2[i.second]++;
+
+        if (temp1 != temp2)
+            return false;
+
+        return true;
+    }
+    
+    bool closeStrings(string text1, string text2) {
         
-        set<char>inox1,inox2;
-        for(auto &i: word1)
-        {
-            left[i]++;
-            inox1.insert(i);
-        }
-        
-        for(auto &i:word2)
-        {
-            right[i]++;
-            inox2.insert(i);
-        }
-        
-        for(auto &i: right)
-        {
-            data[i.second]++;
-        }
-        
-        if(inox1!=inox2)return(0);
-        
-        for(auto &i: left)
-        {
-            if(data.count(i.second)==false)
-            {
-                return(0);
-                
-            }else 
-            {
-                data[i.second]--;
-                if(data[i.second]==0)data.erase(i.second);
-            }
-        }
-        
-        return(1);
+    std::map<char, int> data1, data2;
+
+    for (auto i : text1)
+        data1[i]++;
+
+    for (auto i : text2)
+        data2[i]++;
+
+    return traverse(data1, data2);        
     }
 };
