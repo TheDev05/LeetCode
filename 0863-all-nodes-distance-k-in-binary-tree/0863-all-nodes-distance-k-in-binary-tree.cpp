@@ -7,88 +7,58 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-
 class Solution {
 public:
-void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parent)
-{
-    if (root == NULL)
-        return;
-
-    std::queue<TreeNode *> inox;
-    inox.push(root);
-
-    std::vector<int> result;
-    while (inox.size())
+    void traverse(TreeNode *root, std::map<TreeNode *, TreeNode *> &parentNode)
     {
-        int size = inox.size();
-        for (int i = 0; i < size; i++)
-        {
-            TreeNode *temp = inox.front();
-            inox.pop();
+        if (root == NULL)
+            return;
 
-            if (temp->left != NULL)
-            {
-                parent[temp->left] = temp;
-                inox.push(temp->left);
-            }
+        if (root->left)
+            parentNode[root->left] = root;
+        if (root->right)
+            parentNode[root->right] = root;
 
-            if (temp->right != NULL)
-            {
-                parent[temp->right] = temp;
-                inox.push(temp->right);
-            }
-        }
+        traverse(root->left, parentNode);
+        traverse(root->right, parentNode);
     }
-}
     
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
         
-    std::vector<int>result;
-    if(k == 0)
-    {
-        result.push_back(target->val);
-        return result;
-    }
+    std::map<TreeNode *, TreeNode *> parentNode;
+    traverse(root, parentNode);
         
-    std::map<TreeNode *, TreeNode *> parent;
-    traverse(root, parent);
+    parentNode[root] = NULL;
 
-    std::queue<TreeNode *> inox;
-    std::set<TreeNode *> skip;
+    std::queue<TreeNode *> test;
+    test.push(target);
 
-    inox.push(target);
-    while (inox.size())
+    std::vector<int> res;
+    while (test.size() && k >= 0)
     {
-        int size = inox.size();
+        int size = test.size();
         for (int i = 0; i < size; i++)
         {
-            TreeNode *temp = inox.front();
-            inox.pop();
+            TreeNode *temp = test.front();
+            test.pop();
 
-            if (temp->left != NULL && !skip.count(temp->left))
-                inox.push(temp->left);
-            if (temp->right != NULL && !skip.count(temp->right))
-                inox.push(temp->right);
-            if (parent.count(temp) && !skip.count(parent[temp]))
-                inox.push(parent[temp]);
+            if (k == 0)
+                res.push_back(temp->val);
 
-            skip.insert(temp);
+            if (parentNode.contains(parentNode[temp]) && parentNode[temp])
+                test.push(parentNode[temp]);
+
+            if (temp->left && parentNode.contains(temp->left))
+                test.push(temp->left);
+            if (temp->right && parentNode.contains(temp->right))
+                test.push(temp->right);
+
+            parentNode.erase(temp);
         }
-
+        
         k--;
-
-        if (k == 0)
-            break;
     }
-
-    while (inox.size())
-    {
-        result.push_back(inox.front()->val);
-        inox.pop();
-    }
-        
-    return result;
-        
+    
+    return res;
     }
 };
