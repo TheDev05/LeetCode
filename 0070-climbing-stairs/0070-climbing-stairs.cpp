@@ -1,38 +1,22 @@
-
-int fun(int n, int dp[])
-{
-     if (n == 0)
-    {
-        return (1);
-    }
-    
-     if (dp[n] != -1)
-        return (dp[n]);
-
-    int move1 = 0;
-    int move2 = 0;
-
-    if (n - 1 >= 0)
-    {
-        move1 = fun(n - 1, dp);
-    }
-
-    if (n - 2 >= 0)
-    {
-        move2 = fun(n - 2, dp);
-    }
-
-    return (dp[n] = move1 + move2);
-}
-
-class Solution
-{
+class Solution {
 public:
-    int climbStairs(int n)
-    {
-        int dp[n + 1];
-        memset(dp, -1, sizeof(dp));
+    int climbStairs(int n) {
+        
+    std::vector<int> dp(n + 1, 0);
+    dp[dp.size() - 1] = 1;
 
-        return (fun(n, dp));
+    for (int i = dp.size() - 2; i >= 0; i--)
+    {
+        int next = 0, nextNext = 0;
+        if (i + 1 < dp.size())
+            next = dp[i + 1];
+        if (i + 2 < dp.size())
+            nextNext = dp[i + 2];
+
+        dp[i] = next + nextNext;
+    }
+
+    return dp[0]; 
+        
     }
 };
