@@ -1,26 +1,26 @@
 class Solution {
 public:
-int traverse(std::vector<std::vector<int>> &num, std::vector<std::vector<int>> &storage, int row, int col)
-{
-    if (row == num.size() - 1 && col == num[0].size() - 1)
-        return num[row][col];
-    if (row >= num.size() || col >= num[0].size())
-        return 1e5;
+    int minPathSum(vector<vector<int>>& num) {
+        
+    std::vector<int> first(num[0].size(), 0), second(num[0].size(), INT_MAX);
+    second[num[0].size() - 1] = 0;
 
-    if (storage[row][col] == -1)
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        int val1 = 1e5, val2 = 1e5;
-        val1 = num[row][col] + traverse(num, storage, row + 1, col);
-        val2 = num[row][col] + traverse(num, storage, row, col + 1);
+        for (int j = num[0].size() - 1; j >= 0; j--)
+        {
+            int val1 = INT_MAX, val2 = 0;
+            if (j + 1 < num[0].size())
+                val1 = first[j + 1];
+            val2 = second[j];
 
-        storage[row][col] = std::min(val1, val2);
+            first[j] = num[i][j] + std::min(val1, val2);
+        }
+
+        second = first;
     }
 
-    return storage[row][col];
-}
-    
-    int minPathSum(vector<vector<int>>& num) {
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(num[0].size(), -1));
-    return traverse(num, storage, 0, 0);       
+    return first[0];     
+        
     }
 };
