@@ -1,25 +1,29 @@
 class Solution {
 public:
-int traverse(std::vector<std::vector<int>> &num, std::vector<std::vector<int>> &storage, int index, int col)
-{
-    if (index >= num.size())
-        return 0;
+    int minimumTotal(vector<vector<int>>& num) {
+        
+    if(num.size() == 1)
+        return num[0][0];
+        
+    std::vector<int> first(num.size(), 0), second(num.size(), 0);
+    second = num[num.size() - 1];
 
-    if (storage[index][col] == -1)
+    for (int i = num.size() - 2; i >= 0; i--)
     {
-        int val1 = 0, val2 = 0;
-        val1 = num[index][col] + traverse(num, storage, index + 1, col);
-        val2 = num[index][col] + traverse(num, storage, index + 1, col + 1);
+        for (int j = num[i].size() - 1; j >= 0; j--)
+        {
+            int val1 = INT_MAX, val2 = INT_MAX;
 
-        storage[index][col] = min(val1, val2);
+            val1 = second[j];
+            val2 = second[j + 1];
+
+            first[j] = std::min(val1, val2) + num[i][j];
+        }
+
+        second = first;
     }
 
-    return storage[index][col];
-}
-    
-    int minimumTotal(vector<vector<int>>& num) {
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(num[num.size() - 1].size(), -1));
-    return traverse(num, storage, 0, 0);
+    return first.front(); 
         
     }
 };
