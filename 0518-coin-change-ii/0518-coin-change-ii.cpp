@@ -1,23 +1,24 @@
 class Solution {
 public:
-
     int change(int k, vector<int>& num) {
-    std::vector<int> prev(k + 1, 0);
-    prev[0] = 1;
+        
+    std::vector<std::vector<int>> dp(num.size() + 1, std::vector<int>(k + 1, 0));
+    dp[dp.size() - 1][0] = 1;
 
     for (int i = num.size() - 1; i >= 0; i--)
     {
-        for (int j = 0; j < prev.size(); j++)
+        for (int j = 0; j < dp[0].size(); j++)
         {
             int val1 = 0, val2 = 0;
             if (j - num[i] >= 0)
-                val1 = prev[j - num[i]];
-            val2 = prev[j];
+                val1 = dp[i][j - num[i]];
+            val2 = dp[i + 1][j];
 
-            prev[j] = val1 + val2;
+            dp[i][j] = val1 + val2;
         }
     }
 
-    return prev[k];
+    return dp[0].back();
+        
     }
 };
