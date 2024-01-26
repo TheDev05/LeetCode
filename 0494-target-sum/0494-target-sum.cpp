@@ -1,30 +1,33 @@
 class Solution {
 public:
-int getCount(std::vector<int> &num, std::vector<std::vector<int>> &storage, int temp, int sum, int k, int index)
-{
-    if (index >= num.size())
-        return ((sum - temp) - temp == k) ? 1 : 0;
+    int findTargetSumWays(vector<int>& num, int k) {
+    
+    int sum = accumulate(begin(num), end(num), 0);
 
-    if (storage[index][temp] == -1)
+    std::vector<std::vector<int>> dp(num.size() + 1, std::vector<int>(sum + 1, 0));
+    dp[dp.size() - 1][0] = 1;
+
+    for (int i = num.size() - 1; i >= 0; i--)
     {
-        int val1 = 0, val2 = 0;
+        for (int j = 0; j < dp[0].size(); j++)
+        {
+            int val1 = 0, val2 = 0;
+            if (j - num[i] >= 0)
+                val1 = dp[i + 1][j - num[i]];
+            val2 = dp[i + 1][j];
 
-        val1 = getCount(num, storage, temp + num[index], sum, k, index + 1);
-        val2 = getCount(num, storage, temp, sum, k, index + 1);
-
-        storage[index][temp] = (val1 + val2);
+            dp[i][j] = val1 + val2;
+        }
     }
 
-    return storage[index][temp];
-}
-    
-    int findTargetSumWays(vector<int>& num, int k) {
-    int sum = 0;
-    for (auto i : num)
-        sum += i;
+    int count = 0;
+    for (int i = 0; i < dp[0].size(); i++)
+    {
+        if (dp[0][i] && (i - (sum - i)) == k)
+            count += dp[0][i];
+    }
 
-    std::vector<std::vector<int>> storage(num.size(), std::vector<int>(sum + 1, -1));
-    return getCount(num, storage, 0, sum, k, 0);
+    return count;
         
     }
 };
