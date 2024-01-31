@@ -1,26 +1,26 @@
 class Solution {
 public:
-    int longestPalindromeSubseq(string text1) {
-    std::string text2, result;
+    int longestPalindromeSubseq(string text) {
+        
+    std::string temp = text;
+    reverse(temp.begin(), temp.end());
 
-    text2 = text1;
-    reverse(text2.begin(), text2.end());
-
-    std::vector<std::vector<int>> storage(text1.size() + 1, std::vector<int>(text2.size() + 1, 0));
-    for (int i = storage.size() - 2; i >= 0; i--)
+    std::vector<std::vector<int>> dp(text.size() + 1, std::vector<int>(temp.size() + 1, 0));
+    for (int i = text.size() - 1; i >= 0; i--)
     {
-        for (int j = storage[0].size() - 2; j >= 0; j--)
+        for (int j = temp.size() - 1; j >= 0; j--)
         {
-            int val1 = 0, val2 = 0;
-            if (text1[i] == text2[j])
-                val1 = 1 + storage[i + 1][j + 1];
+            int val = 0;
+            if (text[i] == temp[j])
+                val = 1 + dp[i + 1][j + 1];
             else
-                val2 = std::max(storage[i][j + 1], storage[i + 1][j]);
+                val = std::max(dp[i][j + 1], dp[i + 1][j]);
 
-            storage[i][j] = std::max(val1, val2);
+            dp[i][j] = val;
         }
     }
 
-    return storage[0][0];        
+    return dp[0][0]; 
+        
     }
 };
