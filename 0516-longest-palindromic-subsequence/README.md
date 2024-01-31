@@ -5,17 +5,17 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> s = "bbbab"
+<pre><strong>Input:</strong> s = "bbbab"
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> One possible longest palindromic subsequence is "bbbb".
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> s = "cbbd"
+<pre><strong>Input:</strong> s = "cbbd"
 <strong>Output:</strong> 2
 <strong>Explanation:</strong> One possible longest palindromic subsequence is "bb".
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
