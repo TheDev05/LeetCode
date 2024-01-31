@@ -1,26 +1,26 @@
 class Solution {
 public:
-    
     int findLength(vector<int>& num1, vector<int>& num2) {
-    std::vector<int> prev(num2.size() + 1, 0);
-
-    int max = 0;
+        
+    std::vector<std::vector<int>> dp(num1.size() + 1, std::vector<int>(num2.size() + 1, 0));
     for (int i = num1.size() - 1; i >= 0; i--)
     {
-        for (int j = 0; j < prev.size() - 1; j++)
+        for (int j = num2.size() - 1; j >= 0; j--)
         {
-            int val1 = 0;
+            int val = 0;
             if (num1[i] == num2[j])
-                val1 = 1 + prev[j + 1];
-            else
-                prev[j] = 0;
+                val = 1 + dp[i + 1][j + 1];
 
-            prev[j] = val1;
-            max = std::max(max, prev[j]);
+            dp[i][j] = val;
         }
     }
 
-    return max;
+    int max = 0;
+    for (auto i : dp)
+        for (auto j : i)
+            max = std::max(max, j);
+
+    return max;  
         
     }
 };
