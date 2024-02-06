@@ -9,53 +9,63 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
 class Solution {
 public:
-void traverse(TreeNode *root, int &max)
+
+int traverse(TreeNode *root)
 {
     if (root == NULL)
-        return;
+        return 0;
 
-    std::queue<std::pair<TreeNode *, int>> inox;
-    inox.push({root, 1});
+    std::queue<TreeNode *> inox;
+    std::map<TreeNode *, long long> temp;
 
+    inox.push(root);
+    temp[root] = 1;
+
+    long long max = 0;
     while (inox.size())
     {
-        long long size = inox.size(), left = -1, right = -1;
+        int size = inox.size();
+        long long min = -1, left = -1, right = -1;
+
         for (int i = 0; i < size; i++)
         {
-            TreeNode *temp = inox.front().first;
-            long long val = inox.front().second;
-            
+            auto it = inox.front();
             inox.pop();
 
-            if (temp->left != NULL)
+            if (it->left)
             {
-                if (left == -1)
-                    left = val * 2;
-                right = val * 2;
+                inox.push(it->left);
+                if (min == -1)
+                min = temp[it] * 2;
 
-                inox.push({temp->left, (val * 2) - left});
+                temp[it->left] = (temp[it] * 2) - min;
             }
 
-            if (temp->right != NULL)
+            if (it->right)
             {
-                if (left == -1)
-                    left = (val * 2) + 1;
-                right = (val * 2) + 1;
+                inox.push(it->right);
+                if (min == -1)
+                min = (temp[it] * 2) + 1;
 
-                inox.push({temp->right, ((val * 2) + 1) - left});
+                temp[it->right] = ((temp[it] * 2) + 1) - min;
             }
+
+            if (left == -1)
+                left = temp[it];
+            right = temp[it];
         }
 
-        max = std::max((long long)max, abs(left - right) + 1);
+        max = std::max(max, (right - left) + 1);
     }
+
+    return max;
 }
     
     int widthOfBinaryTree(TreeNode* root) {
-    int max = 1;
-
-    traverse(root, max);
-    return max;        
+    return traverse(root); 
+        
     }
 };
