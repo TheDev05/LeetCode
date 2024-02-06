@@ -11,46 +11,69 @@
  */
 class Solution {
 public:
-TreeNode *traverse(TreeNode *temp)
-{
-    if (temp->left == NULL && temp->right == NULL)
-        return NULL;
 
-    if (temp->left && temp->right)
+    void deleteNode(TreeNode *target, TreeNode *parent)
     {
-        TreeNode *inox = temp->right;
-        while (inox->left)
-            inox = inox->left;
+        if (target->left && target->right)
+           { TreeNode* temp = target->right;
+            while(temp->left)
+            temp = temp->left;
+            temp->left = target->left;
 
-        inox->left = temp->left;
-        return temp->right;
+            if(parent->left == target)
+            parent->left = target->right;
+            else parent->right=target->right;
+            }
+
+        else if (target->left)
+            {
+                if(parent->left == target)
+            parent->left = target->left;
+            else parent->right=target->left;
+            }
+        else if(target->right)
+            {
+                if(parent->left == target)
+            parent->left = target->right;
+            else parent->right=target->right;
+            }
+        else {
+            if(parent->left == target)
+            parent->left = NULL;
+            else parent->right=NULL;
+        }
     }
-    else if (temp->left)
-        return temp->left;
-    else
-        return temp->right;
-}
-
-    
+   
     TreeNode* deleteNode(TreeNode* root, int key) {
-    
-    if(root == NULL) return {};
-    if(root -> val == key) return traverse(root);
-    
-    TreeNode *temp = root;
-    TreeNode *parent = NULL;
+        
+    if(root == NULL) return root;
 
+    if (root->val == key)
+    {
+        if (root->left && root->right)
+        {
+            TreeNode* temp = root->right;
+            while(temp->left)
+            temp = temp->left;
+
+            temp->left = root->left;
+            root = root->right;
+        }
+        else if (root->left)
+            root = root->left;
+        else if(root->right)
+            root = root->right;
+        else root = NULL;
+
+        return root;
+    }
+
+    TreeNode *temp = root, *parent = NULL;
     while (temp)
     {
-        if (temp->val == key)
+        if (key == temp->val)
         {
-            TreeNode *inox = traverse(temp);
-
-            if (parent->left && parent->left->val == key)
-                parent->left = inox;
-            else
-                parent->right = inox;
-
+            deleteNode(temp, parent);
             break;
         }
 
@@ -60,8 +83,9 @@ TreeNode *traverse(TreeNode *temp)
             temp = temp->left;
         else
             temp = temp->right;
-    } 
+    }  
         
     return root;
+
     }
 };
