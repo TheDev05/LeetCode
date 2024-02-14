@@ -1,56 +1,33 @@
-/*
- * @lc app=leetcode id=2149 lang=cpp
- *
- * [2149] Rearrange Array Elements by Sign
- */
-
-// @lc code=start
-class Solution
-{
+class Solution {
 public:
-    vector<int> rearrangeArray(vector<int> &nums)
+    vector<int> rearrangeArray(vector<int>& num) {
+
+    std::vector<int> pos, neg, res;
+    for (auto i : num)
+        if (i > 0)
+            pos.push_back(i);
+        else
+            neg.push_back(i);
+
+    reverse(begin(pos), end(pos));
+    reverse(begin(neg), end(neg));
+
+    res.push_back(pos.back());
+    pos.pop_back();
+
+    while (pos.size() || neg.size())
     {
-        set<pair<int, int>> pos;
-        set<pair<int, int>> neg;
-
-        int index = 0;
-        for (auto i : nums)
+        if (res.back() > 0)
         {
-            if (i < 0)
-            {
-                neg.insert(make_pair(index, i));
-            }
-            else
-                pos.insert(make_pair(index, i));
-
-            index++;
+            if (neg.size())
+                res.push_back(neg.back()),
+                    neg.pop_back();
         }
+        else if (pos.size())
+            res.push_back(pos.back()),
+                pos.pop_back();
+    }
 
-        vector<int> result;
-
-        auto it = pos.begin();
-        result.push_back((it)->second);
-        pos.erase(it);
-
-        for (int i = 0; i < nums.size() - 1; i++)
-        {
-            if (result.back() > 0)
-            {
-                auto it = neg.begin();
-
-                result.push_back((it)->second);
-                neg.erase(it);
-            }
-            else
-            {
-                auto it = pos.begin();
-
-                result.push_back((it)->second);
-                pos.erase(it);
-            }
-        }
-
-        return (result);
+    return res;        
     }
 };
-// @lc code=end
