@@ -11,24 +11,24 @@
 <p>Return <em>the modified array after rearranging the elements to satisfy the aforementioned conditions</em>.</p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+<p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> nums = [3,1,-2,-5,2,-4]
+<pre><strong>Input:</strong> nums = [3,1,-2,-5,2,-4]
 <strong>Output:</strong> [3,-2,1,-5,2,-4]
 <strong>Explanation:</strong>
 The positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].
 The only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].
 Other ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.  
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> nums = [-1,1]
+<pre><strong>Input:</strong> nums = [-1,1]
 <strong>Output:</strong> [1,-1]
 <strong>Explanation:</strong>
 1 is the only positive integer and -1 the only negative integer in nums.
 So nums is rearranged to [1,-1].
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
