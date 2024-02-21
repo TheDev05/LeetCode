@@ -1,51 +1,50 @@
 class Solution {
 public:
-    int countCompleteComponents(int n, vector<vector<int>>& adj) {
+    int countCompleteComponents(int n, vector<vector<int>>& num) {
         
-    std::vector<int> num[n];
-    for (int i = 0; i < adj.size(); i++)
+    std::vector<int> adj[n];
+    for (int i = 0; i < num.size(); i++)
     {
-        num[adj[i][0]].push_back(adj[i][1]);
-        num[adj[i][1]].push_back(adj[i][0]);
+        adj[num[i][0]].push_back(num[i][1]);
+        adj[num[i][1]].push_back(num[i][0]);
     }
 
     std::vector<int> vis(n, 0);
 
-    int res = 0;
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
         if (vis[i] == 0)
         {
             std::queue<int> inox;
+            std::map<int, int> data;
 
             inox.push(i);
             vis[i] = 1;
 
-            int edges = INT_MAX, size = 0;
+            int totalNodes = 0;
             while (inox.size())
             {
-                int local = inox.front();
+                int temp = inox.front();
                 inox.pop();
 
-                size++;
-                edges = std::min((int)(num[local].size()), edges);
+                data[adj[temp].size()]++;
+                totalNodes++;
 
-                for (auto j : num[local])
+                for (auto j : adj[temp])
                 {
                     if (vis[j] == 0)
-                    {
-                        vis[j] = 1;
+                        vis[j] = 1,
                         inox.push(j);
-                    }
                 }
             }
 
-            if (edges >= size - 1)
-                res++;
+            if (data[totalNodes - 1] == totalNodes)
+                count++;
         }
     }
 
-    return res;  
+    return count;   
         
     }
 };
