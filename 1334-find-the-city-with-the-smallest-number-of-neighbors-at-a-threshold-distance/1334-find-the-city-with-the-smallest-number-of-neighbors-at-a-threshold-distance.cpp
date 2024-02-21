@@ -1,82 +1,60 @@
 class Solution {
 public:
-int dijkstra(int src, int target, int n, std::vector<std::pair<int, int>> num[])
-{
-    std::vector<int> dist(n, 1e7);
-    std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, greater<std::pair<int, int>>> inox;
-
-    inox.push({0, src});
-    dist[src] = 0;
-
-    while (inox.size())
+    void traverse(std::vector<std::pair<int, int>> adj[], std::map<int, int> &data, int index, int limit, int n)
     {
-        auto it = inox.top();
-        inox.pop();
+        // dist, node
+        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, greater<std::pair<int, int>>> inox;
+        std::vector<int> distance(n, INT_MAX);
 
-        int node = it.second;
-        int wt = it.first;
+        inox.push({0, index});
+        distance[index] = 0;
 
-        for (auto i : num[node])
+        while (inox.size())
         {
-            int adjNode = i.first;
-            int adjWt = i.second;
+            auto [dist, node] = inox.top();
+            inox.pop();
 
-            if (wt + adjWt < dist[adjNode])
+            for (auto [adjNode, adjDist] : adj[node])
             {
-                dist[adjNode] = wt + adjWt;
-                inox.push({dist[adjNode], adjNode});
+                if (dist + adjDist < distance[adjNode])
+                {
+                    distance[adjNode] = dist + adjDist;
+                    inox.push({distance[adjNode], adjNode});
+                }
             }
         }
-    }
 
-    return dist[target];
-}
-    
-    int findTheCity(int n, vector<vector<int>>& adj, int lim) {
-        
-    std::vector<std::pair<int, int>> num[n];
-    for (int i = 0; i < adj.size(); i++)
-    {
-        num[adj[i][0]].push_back({adj[i][1], adj[i][2]});
-        num[adj[i][1]].push_back({adj[i][0], adj[i][2]});
-    }
-
-    std::vector<std::vector<int>> dist(n, std::vector<int>(n, 0));
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < distance.size(); i++)
         {
-            if (i == j)
-                dist[i][j] = 0;
-            else
-                dist[i][j] = dijkstra(i, j, n, num);
+            if (distance[i] > limit)
+                continue;
+
+            data[i]++;
         }
     }
+
+    int findTheCity(int n, vector<vector<int>>& num, int limit) {
         
-    std::vector<int> inox(n, 0);
-
-    int min = INT_MAX;
-    for (int i = 0; i < n; i++)
+    // node, weight
+    std::vector<std::pair<int, int>> adj[n];
+    for (int i = 0; i < num.size(); i++)
     {
-        int count = 0;
-        for (int j = 0; j < n; j++)
-        {
-            if (dist[i][j] && dist[i][j] <= lim)
-                count++;
-        }
-
-        inox[i] = count;
-        min = std::min(min, count);
+        adj[num[i][0]].push_back({num[i][1], num[i][2]});
+        adj[num[i][1]].push_back({num[i][0], num[i][2]});
     }
 
-    int max = 0;
+    std::map<int, int> data;
     for (int i = 0; i < n; i++)
     {
-        if (inox[i] == min)
-            max = std::max(max, i);
+        traverse(adj, data, i, limit, n);
     }
 
-    return max;
+    int min = INT_MAX, ans = 0;
+    for (auto i : data)
+        if (i.second <= min)
+            min = i.second, ans = std::max(ans, i.first);
+
+    return ans;
         
     }
 };
