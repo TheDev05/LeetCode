@@ -1,14 +1,18 @@
 class Solution {
 public:
-bool canFinish(int n, vector<vector<int>>& num) {
-    
-    std::vector<int> store[n];
-    std::vector<int> indeg(n, 0);
+    bool canFinish(int n, vector<vector<int>>& num) {
 
+    std::vector<int> adj[n];
     for (int i = 0; i < num.size(); i++)
     {
-        store[num[i][1]].push_back(num[i][0]);
-        indeg[num[i][0]]++;
+        adj[num[i][1]].push_back(num[i][0]);
+    }
+
+    std::vector<int> indeg(n, 0);
+    for (int i = 0; i < n; i++)
+    {
+        for (auto j : adj[i])
+            indeg[j]++;
     }
 
     std::queue<int> inox;
@@ -22,11 +26,11 @@ bool canFinish(int n, vector<vector<int>>& num) {
     while (inox.size())
     {
         int local = inox.front();
-        inox.pop();
 
+        inox.pop();
         count++;
 
-        for (auto i : store[local])
+        for (auto i : adj[local])
         {
             indeg[i]--;
             if (indeg[i] == 0)
@@ -34,9 +38,9 @@ bool canFinish(int n, vector<vector<int>>& num) {
         }
     }
 
-    if (count == n)
-        return true;
-
-       return false;       
+    if (count != n)
+        return false;
+    return true;
+        
     }
 };
