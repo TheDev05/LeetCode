@@ -1,52 +1,52 @@
 class Solution {
 public:
-    int ladderLength(string first, string last, vector<string>& num) {
-        
-    std::set<std::string> vis, exist;
-    std::queue<std::pair<std::string, int>> inox;
+    int ladderLength(string start, string end, vector<string>& num) {
+
+    std::unordered_set<std::string> data;
+    std::queue<std::string> inox;
+
+    inox.push(start);
 
     for (auto i : num)
-        exist.insert(i);
-        
-    if(exist.count(last) == false) return 0;
+        data.insert(i);
 
-    inox.push({first, 1});
-    vis.insert(first);
-
-    int count = 0;
+    int ans = 0;
     while (inox.size())
     {
-        std::string local = inox.front().first;
-        int level = inox.front().second;
+        int size = inox.size();
+        ans++;
 
-        inox.pop();
-        if (local == last)
+        for (int idx = 0; idx < size; idx++)
         {
-            count = level;
-            break;
-        }
+            std::string text = inox.front();
+            inox.pop();
 
-        for (int i = 0; i < local.size(); i++)
-        {
-            std::string temp = local;
-            char alpha = 'a';
+            if (text == end)
+                return ans;
 
-            for (int j = 0; j < 26; j++)
+            std::unordered_set<std::string> store;
+            for (auto it = data.begin(); it != data.end(); it++)
             {
-                local[i] = alpha;
-                alpha++;
-
-                if (vis.count(local) == false && exist.count(local))
+                std::string temp = *it;
+                if (temp.size() == text.size())
                 {
-                    vis.insert(local);
-                    inox.push({local, level + 1});
+                    int count = 0;
+                    for (int j = 0; j < text.size(); j++)
+                        if (text[j] != temp[j])
+                            count++;
+
+                    if (count == 1)
+                        inox.push(temp),
+                        store.insert(temp);
                 }
             }
 
-            local = temp;
+            for(auto i: store)
+                data.erase(i);
         }
     }
+
+    return 0;
         
-    return count;
     }
 };
