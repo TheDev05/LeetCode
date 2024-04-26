@@ -10,5 +10,5 @@ This repository basically contains DSA practiced problems from Leetcode and geek
 Get this one from [here.](https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi?hl=en)
 <br>
 
-Love & Peace! 💙
+Love & Peace. 💙
 
