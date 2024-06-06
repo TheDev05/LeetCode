@@ -12,3 +12,12 @@ Get this one from [here.](https://chrome.google.com/webstore/detail/leethub/acio
 
 Love & Peace. 💙
 
+
+# Array
+|  |
+| ------- |
+| [3430-count-days-without-meetings](https://github.com/TheDev05/LeetCode/tree/master/3430-count-days-without-meetings) |
+# Sorting
+|  |
+| ------- |
+| [3430-count-days-without-meetings](https://github.com/TheDev05/LeetCode/tree/master/3430-count-days-without-meetings) |
