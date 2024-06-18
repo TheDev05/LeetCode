@@ -29,8 +29,17 @@ Love & Peace. 💙
 # Math
 |  |
 | ------- |
+| [0633-sum-of-square-numbers](https://github.com/TheDev05/LeetCode/tree/master/0633-sum-of-square-numbers) |
 | [3416-sum-of-digit-differences-of-all-pairs](https://github.com/TheDev05/LeetCode/tree/master/3416-sum-of-digit-differences-of-all-pairs) |
 # Counting
 |  |
 | ------- |
 | [3416-sum-of-digit-differences-of-all-pairs](https://github.com/TheDev05/LeetCode/tree/master/3416-sum-of-digit-differences-of-all-pairs) |
+# Two Pointers
+|  |
+| ------- |
+| [0633-sum-of-square-numbers](https://github.com/TheDev05/LeetCode/tree/master/0633-sum-of-square-numbers) |
+# Binary Search
+|  |
+| ------- |
+| [0633-sum-of-square-numbers](https://github.com/TheDev05/LeetCode/tree/master/0633-sum-of-square-numbers) |
