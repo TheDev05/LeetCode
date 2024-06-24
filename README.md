@@ -43,3 +43,11 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0633-sum-of-square-numbers](https://github.com/TheDev05/LeetCode/tree/master/0633-sum-of-square-numbers) |
+# Linked List
+|  |
+| ------- |
+| [0025-reverse-nodes-in-k-group](https://github.com/TheDev05/LeetCode/tree/master/0025-reverse-nodes-in-k-group) |
+# Recursion
+|  |
+| ------- |
+| [0025-reverse-nodes-in-k-group](https://github.com/TheDev05/LeetCode/tree/master/0025-reverse-nodes-in-k-group) |
