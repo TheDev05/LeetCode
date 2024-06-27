@@ -29,6 +29,7 @@ Love & Peace. 💙
 # Math
 |  |
 | ------- |
+| [0279-perfect-squares](https://github.com/TheDev05/LeetCode/tree/master/0279-perfect-squares) |
 | [0633-sum-of-square-numbers](https://github.com/TheDev05/LeetCode/tree/master/0633-sum-of-square-numbers) |
 | [3416-sum-of-digit-differences-of-all-pairs](https://github.com/TheDev05/LeetCode/tree/master/3416-sum-of-digit-differences-of-all-pairs) |
 # Counting
@@ -51,3 +52,11 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0025-reverse-nodes-in-k-group](https://github.com/TheDev05/LeetCode/tree/master/0025-reverse-nodes-in-k-group) |
+# Dynamic Programming
+|  |
+| ------- |
+| [0279-perfect-squares](https://github.com/TheDev05/LeetCode/tree/master/0279-perfect-squares) |
+# Breadth-First Search
+|  |
+| ------- |
+| [0279-perfect-squares](https://github.com/TheDev05/LeetCode/tree/master/0279-perfect-squares) |
