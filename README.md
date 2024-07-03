@@ -60,3 +60,22 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0279-perfect-squares](https://github.com/TheDev05/LeetCode/tree/master/0279-perfect-squares) |
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Depth-First Search
+|  |
+| ------- |
+| [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+## Graph
+|  |
+| ------- |
+| [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+## Topological Sort
+|  |
+| ------- |
+| [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+<!---LeetCode Topics End-->
