@@ -1,6 +1,5 @@
 class Solution {
 public:
-#include <bits/stdc++.h>
 int getCount(std::string &text1, std::string &text2, std::vector<std::vector<int>> &storage, bool ok, int index1, int index2)
 {
     if (index1 >= text1.size() && index2 >= text2.size())
