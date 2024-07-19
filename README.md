@@ -107,4 +107,12 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
+## Linked List
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/TheDev05/LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/TheDev05/LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
 <!---LeetCode Topics End-->
