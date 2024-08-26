@@ -1,39 +1,52 @@
 class Solution {
 public:
-int binSearch(std::vector<int> &num, int target, bool ok)
-{
+    vector<int> searchRange(vector<int>& num, int k) {
+
     int left = 0, right = num.size() - 1;
+    int start = -1, end = -1;
+
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
-        if (num[mid] == target)
-        {
-            if (ok)
-                if (mid && num[mid - 1] == target)
-                    right = mid - 1;
-                else
-                    return mid;
 
-            if (!ok)
-                if (mid != num.size() - 1 && num[mid + 1] == target)
-                    left = mid + 1;
-                else
-                    return mid;
+        if (num[mid] == k)
+        {
+            if (mid != 0 && num[mid - 1] == k)
+                right = mid - 1;
+            else
+            {
+                start = mid;
+                break;
+            }
         }
-        else if (num[mid] > target)
+        else if (num[mid] > k)
             right = mid - 1;
         else
             left = mid + 1;
     }
 
-    return -1;
-}
-    
-    vector<int> searchRange(vector<int>& num, int target) {
-        
-    int left = binSearch(num, target, true);
-    int right = binSearch(num, target, false);
-        
-    return {left, right};
+    left = 0, right = num.size() - 1;
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (num[mid] == k)
+        {
+            if (mid != num.size() - 1 && num[mid + 1] == k)
+                left = mid + 1;
+            else
+            {
+                end = mid;
+                break;
+            }
+        }
+        else if (num[mid] > k)
+            right = mid - 1;
+        else
+            left = mid + 1;
+    } 
+
+    std::vector<int>res={start, end};
+    return res;       
     }
 };
