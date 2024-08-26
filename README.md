@@ -115,4 +115,16 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/TheDev05/LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
+## Array
+|  |
+| ------- |
+| [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+## Hash Table
+|  |
+| ------- |
+| [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+## Sliding Window
+|  |
+| ------- |
+| [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 <!---LeetCode Topics End-->
