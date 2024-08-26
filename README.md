@@ -81,6 +81,7 @@ Love & Peace. 💙
 ## String
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
 ## Stack
@@ -122,9 +123,11 @@ Love & Peace. 💙
 ## Hash Table
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Sliding Window
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 <!---LeetCode Topics End-->
