@@ -100,6 +100,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
+| [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
 ## Greedy
 |  |
 | ------- |
@@ -119,6 +120,7 @@ Love & Peace. 💙
 ## Array
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Hash Table
 |  |
@@ -130,4 +132,8 @@ Love & Peace. 💙
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
 <!---LeetCode Topics End-->
