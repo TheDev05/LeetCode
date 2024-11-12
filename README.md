@@ -122,6 +122,7 @@ Love & Peace. 💙
 | ------- |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/TheDev05/LeetCode/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
+| [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
 ## Hash Table
@@ -142,5 +143,10 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/TheDev05/LeetCode/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
+| [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
+## Sorting
+|  |
+| ------- |
+| [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 <!---LeetCode Topics End-->
