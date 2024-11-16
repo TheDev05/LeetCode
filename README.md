@@ -129,6 +129,7 @@ Love & Peace. 💙
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/TheDev05/LeetCode/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
 ## Hash Table
 |  |
@@ -140,6 +141,7 @@ Love & Peace. 💙
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 ## Divide and Conquer
 |  |
 | ------- |
