@@ -24,6 +24,6 @@ public:
         }
     }
 
-    sort(num.begin()+idx, num.end());
+    sort(num.begin() + idx, num.end());
     }
 };
