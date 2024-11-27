@@ -127,6 +127,7 @@ Love & Peace. 💙
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/TheDev05/LeetCode/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0907-koko-eating-bananas](https://github.com/TheDev05/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
@@ -141,6 +142,7 @@ Love & Peace. 💙
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/TheDev05/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Sliding Window
@@ -154,6 +156,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 ## Binary Search
 |  |
 | ------- |
@@ -168,6 +171,23 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+## Bucket Sort
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+## Counting
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+## Quickselect
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 <!---LeetCode Topics End-->
