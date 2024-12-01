@@ -66,18 +66,22 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 ## Graph
 |  |
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 ## Topological Sort
 |  |
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 ## String
 |  |
 | ------- |
@@ -102,6 +106,7 @@ Love & Peace. 💙
 | ------- |
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 ## Greedy
 |  |
 | ------- |
@@ -127,6 +132,7 @@ Love & Peace. 💙
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/TheDev05/LeetCode/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0907-koko-eating-bananas](https://github.com/TheDev05/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
@@ -190,4 +196,12 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+## Memoization
+|  |
+| ------- |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+## Matrix
+|  |
+| ------- |
+| [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 <!---LeetCode Topics End-->
