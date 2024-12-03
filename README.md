@@ -89,6 +89,7 @@ Love & Peace. 💙
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
+| [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 ## Stack
 |  |
 | ------- |
@@ -124,6 +125,7 @@ Love & Peace. 💙
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/TheDev05/LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0031-next-permutation](https://github.com/TheDev05/LeetCode/tree/master/0031-next-permutation) |
+| [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Array
 |  |
@@ -138,6 +140,7 @@ Love & Peace. 💙
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/TheDev05/LeetCode/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
+| [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
@@ -204,4 +207,8 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+## Simulation
+|  |
+| ------- |
+| [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 <!---LeetCode Topics End-->
