@@ -113,6 +113,7 @@ Love & Peace. 💙
 | ------- |
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
+| [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
 ## Recursion
 |  |
 | ------- |
@@ -146,6 +147,7 @@ Love & Peace. 💙
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
 ## Hash Table
