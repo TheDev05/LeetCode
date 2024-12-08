@@ -148,6 +148,7 @@ Love & Peace. 💙
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3483-alternating-groups-ii](https://github.com/TheDev05/LeetCode/tree/master/3483-alternating-groups-ii) |
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
@@ -160,6 +161,7 @@ Love & Peace. 💙
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Sliding Window
 |  |
 | ------- |
@@ -204,6 +206,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Quickselect
 |  |
 | ------- |
@@ -216,8 +219,21 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Simulation
 |  |
 | ------- |
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
+## Math
+|  |
+| ------- |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
+## Enumeration
+|  |
+| ------- |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
+## Number Theory
+|  |
+| ------- |
+| [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 <!---LeetCode Topics End-->
