@@ -138,6 +138,7 @@ Love & Peace. 💙
 | ------- |
 | [0031-next-permutation](https://github.com/TheDev05/LeetCode/tree/master/0031-next-permutation) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/TheDev05/LeetCode/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
+| [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
 | [0128-longest-consecutive-sequence](https://github.com/TheDev05/LeetCode/tree/master/0128-longest-consecutive-sequence) |
@@ -229,6 +230,7 @@ Love & Peace. 💙
 ## Matrix
 |  |
 | ------- |
+| [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Simulation
@@ -238,6 +240,7 @@ Love & Peace. 💙
 ## Math
 |  |
 | ------- |
+| [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Enumeration
 |  |
