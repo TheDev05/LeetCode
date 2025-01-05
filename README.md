@@ -89,6 +89,7 @@ Love & Peace. 💙
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
+| [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/TheDev05/LeetCode/tree/master/2691-count-vowel-strings-in-ranges) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
@@ -150,6 +151,7 @@ Love & Peace. 💙
 | [0718-maximum-length-of-repeated-subarray](https://github.com/TheDev05/LeetCode/tree/master/0718-maximum-length-of-repeated-subarray) |
 | [0907-koko-eating-bananas](https://github.com/TheDev05/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
+| [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/TheDev05/LeetCode/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
@@ -170,6 +172,7 @@ Love & Peace. 💙
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0128-longest-consecutive-sequence](https://github.com/TheDev05/LeetCode/tree/master/0128-longest-consecutive-sequence) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+| [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
@@ -207,6 +210,7 @@ Love & Peace. 💙
 | ------- |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+| [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
@@ -279,4 +283,5 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0456-132-pattern](https://github.com/TheDev05/LeetCode/tree/master/0456-132-pattern) |
+| [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 <!---LeetCode Topics End-->
