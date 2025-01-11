@@ -93,12 +93,14 @@ Love & Peace. 💙
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/TheDev05/LeetCode/tree/master/2691-count-vowel-strings-in-ranges) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
+| [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
 ## Stack
 |  |
 | ------- |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
 | [0456-132-pattern](https://github.com/TheDev05/LeetCode/tree/master/0456-132-pattern) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
+| [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
 ## Tree
 |  |
 | ------- |
@@ -181,6 +183,7 @@ Love & Peace. 💙
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
+| [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
 ## Sliding Window
 |  |
 | ------- |
@@ -250,6 +253,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
+| [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
 ## Math
 |  |
 | ------- |
