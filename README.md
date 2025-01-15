@@ -98,6 +98,7 @@ Love & Peace. 💙
 ## Stack
 |  |
 | ------- |
+| [0150-evaluate-reverse-polish-notation](https://github.com/TheDev05/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
 | [0456-132-pattern](https://github.com/TheDev05/LeetCode/tree/master/0456-132-pattern) |
 | [2221-check-if-a-parentheses-string-can-be-valid](https://github.com/TheDev05/LeetCode/tree/master/2221-check-if-a-parentheses-string-can-be-valid) |
@@ -151,6 +152,7 @@ Love & Peace. 💙
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0053-maximum-subarray](https://github.com/TheDev05/LeetCode/tree/master/0053-maximum-subarray) |
 | [0128-longest-consecutive-sequence](https://github.com/TheDev05/LeetCode/tree/master/0128-longest-consecutive-sequence) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/TheDev05/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
@@ -261,6 +263,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/TheDev05/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Enumeration
