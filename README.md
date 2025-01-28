@@ -67,11 +67,13 @@ Love & Peace. 💙
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 ## Graph
 |  |
 | ------- |
@@ -172,6 +174,7 @@ Love & Peace. 💙
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/TheDev05/LeetCode/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
+| [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
@@ -257,6 +260,7 @@ Love & Peace. 💙
 | ------- |
 | [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Simulation
 |  |
@@ -291,6 +295,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/TheDev05/LeetCode/tree/master/0128-longest-consecutive-sequence) |
+| [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 ## Prefix Sum
 |  |
 | ------- |
