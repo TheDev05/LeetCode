@@ -4,7 +4,9 @@ public:
         
         
         int n=nums.size();
+        
         if(n==1)return(nums[0]);
+        if(nums[0]<nums[n-1])return(nums[0]);
 
         
         int l=0;
@@ -28,7 +30,7 @@ public:
                 return(nums[mid]);
             }else if(nums[l]>nums[mid])r=mid-1;
             else if(nums[mid]>nums[r])l=mid+1;
-            else r=1;
+            else r=mid-1;
         }
         
         return(0);
