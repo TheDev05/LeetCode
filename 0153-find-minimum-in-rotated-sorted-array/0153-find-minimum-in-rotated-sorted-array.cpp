@@ -28,7 +28,7 @@ public:
                 return(nums[mid]);
             }else if(nums[l]>nums[mid])r=mid-1;
             else if(nums[mid]>nums[r])l=mid+1;
-            else r=mid-1;
+            else r=1;
         }
         
         return(0);
