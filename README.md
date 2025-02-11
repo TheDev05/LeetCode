@@ -67,6 +67,7 @@ Love & Peace. 💙
 | ------- |
 | [0310-minimum-height-trees](https://github.com/TheDev05/LeetCode/tree/master/0310-minimum-height-trees) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [0419-battleships-in-a-board](https://github.com/TheDev05/LeetCode/tree/master/0419-battleships-in-a-board) |
 | [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 ## Breadth-First Search
 |  |
@@ -165,6 +166,7 @@ Love & Peace. 💙
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
+| [0419-battleships-in-a-board](https://github.com/TheDev05/LeetCode/tree/master/0419-battleships-in-a-board) |
 | [0456-132-pattern](https://github.com/TheDev05/LeetCode/tree/master/0456-132-pattern) |
 | [0646-maximum-length-of-pair-chain](https://github.com/TheDev05/LeetCode/tree/master/0646-maximum-length-of-pair-chain) |
 | [0718-maximum-length-of-repeated-subarray](https://github.com/TheDev05/LeetCode/tree/master/0718-maximum-length-of-repeated-subarray) |
@@ -266,6 +268,7 @@ Love & Peace. 💙
 | ------- |
 | [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [0329-longest-increasing-path-in-a-matrix](https://github.com/TheDev05/LeetCode/tree/master/0329-longest-increasing-path-in-a-matrix) |
+| [0419-battleships-in-a-board](https://github.com/TheDev05/LeetCode/tree/master/0419-battleships-in-a-board) |
 | [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Simulation
