@@ -203,6 +203,7 @@ Love & Peace. 💙
 | [0128-longest-consecutive-sequence](https://github.com/TheDev05/LeetCode/tree/master/0128-longest-consecutive-sequence) |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
+| [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
@@ -295,6 +296,7 @@ Love & Peace. 💙
 | [0048-rotate-image](https://github.com/TheDev05/LeetCode/tree/master/0048-rotate-image) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/TheDev05/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
+| [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [0445-add-two-numbers-ii](https://github.com/TheDev05/LeetCode/tree/master/0445-add-two-numbers-ii) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Enumeration
@@ -340,4 +342,9 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
+| [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
+## Reservoir Sampling
+|  |
+| ------- |
+| [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 <!---LeetCode Topics End-->
