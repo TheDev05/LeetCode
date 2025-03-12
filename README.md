@@ -139,6 +139,7 @@ Love & Peace. 💙
 | [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/TheDev05/LeetCode/tree/master/3764-maximum-sum-with-at-most-k-elements) |
+| [3779-eat-pizzas](https://github.com/TheDev05/LeetCode/tree/master/3779-eat-pizzas) |
 ## Recursion
 |  |
 | ------- |
@@ -195,6 +196,7 @@ Love & Peace. 💙
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/TheDev05/LeetCode/tree/master/3764-maximum-sum-with-at-most-k-elements) |
+| [3779-eat-pizzas](https://github.com/TheDev05/LeetCode/tree/master/3779-eat-pizzas) |
 ## Hash Table
 |  |
 | ------- |
@@ -253,6 +255,7 @@ Love & Peace. 💙
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/TheDev05/LeetCode/tree/master/3764-maximum-sum-with-at-most-k-elements) |
+| [3779-eat-pizzas](https://github.com/TheDev05/LeetCode/tree/master/3779-eat-pizzas) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
