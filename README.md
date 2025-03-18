@@ -94,6 +94,7 @@ Love & Peace. 💙
 | [0044-wildcard-matching](https://github.com/TheDev05/LeetCode/tree/master/0044-wildcard-matching) |
 | [0049-group-anagrams](https://github.com/TheDev05/LeetCode/tree/master/0049-group-anagrams) |
 | [0331-verify-preorder-serialization-of-a-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/0331-verify-preorder-serialization-of-a-binary-tree) |
+| [0648-replace-words](https://github.com/TheDev05/LeetCode/tree/master/0648-replace-words) |
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2221-check-if-a-parentheses-string-can-be-valid](https://github.com/TheDev05/LeetCode/tree/master/2221-check-if-a-parentheses-string-can-be-valid) |
 | [2232-adding-spaces-to-a-string](https://github.com/TheDev05/LeetCode/tree/master/2232-adding-spaces-to-a-string) |
@@ -177,6 +178,7 @@ Love & Peace. 💙
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/TheDev05/LeetCode/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
 | [0456-132-pattern](https://github.com/TheDev05/LeetCode/tree/master/0456-132-pattern) |
 | [0646-maximum-length-of-pair-chain](https://github.com/TheDev05/LeetCode/tree/master/0646-maximum-length-of-pair-chain) |
+| [0648-replace-words](https://github.com/TheDev05/LeetCode/tree/master/0648-replace-words) |
 | [0718-maximum-length-of-repeated-subarray](https://github.com/TheDev05/LeetCode/tree/master/0718-maximum-length-of-repeated-subarray) |
 | [0907-koko-eating-bananas](https://github.com/TheDev05/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
@@ -206,6 +208,7 @@ Love & Peace. 💙
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
+| [0648-replace-words](https://github.com/TheDev05/LeetCode/tree/master/0648-replace-words) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
@@ -350,4 +353,8 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
+## Trie
+|  |
+| ------- |
+| [0648-replace-words](https://github.com/TheDev05/LeetCode/tree/master/0648-replace-words) |
 <!---LeetCode Topics End-->
