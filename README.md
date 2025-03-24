@@ -194,6 +194,7 @@ Love & Peace. 💙
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
+| [3430-count-days-without-meetings](https://github.com/TheDev05/LeetCode/tree/master/3430-count-days-without-meetings) |
 | [3483-alternating-groups-ii](https://github.com/TheDev05/LeetCode/tree/master/3483-alternating-groups-ii) |
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
@@ -257,6 +258,7 @@ Love & Peace. 💙
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
+| [3430-count-days-without-meetings](https://github.com/TheDev05/LeetCode/tree/master/3430-count-days-without-meetings) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/TheDev05/LeetCode/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 | [3779-eat-pizzas](https://github.com/TheDev05/LeetCode/tree/master/3779-eat-pizzas) |
 ## Heap (Priority Queue)
