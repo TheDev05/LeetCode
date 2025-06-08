@@ -192,6 +192,7 @@ Love & Peace. 💙
 | [2691-count-vowel-strings-in-ranges](https://github.com/TheDev05/LeetCode/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/TheDev05/LeetCode/tree/master/2699-count-the-number-of-fair-pairs) |
 | [2764-maximum-number-of-fish-in-a-grid](https://github.com/TheDev05/LeetCode/tree/master/2764-maximum-number-of-fish-in-a-grid) |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/TheDev05/LeetCode/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 | [2888-minimum-index-of-a-valid-split](https://github.com/TheDev05/LeetCode/tree/master/2888-minimum-index-of-a-valid-split) |
 | [3152-maximum-value-of-an-ordered-triplet-ii](https://github.com/TheDev05/LeetCode/tree/master/3152-maximum-value-of-an-ordered-triplet-ii) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
@@ -217,6 +218,7 @@ Love & Peace. 💙
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/TheDev05/LeetCode/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 | [2888-minimum-index-of-a-valid-split](https://github.com/TheDev05/LeetCode/tree/master/2888-minimum-index-of-a-valid-split) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
@@ -374,4 +376,8 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0239-sliding-window-maximum](https://github.com/TheDev05/LeetCode/tree/master/0239-sliding-window-maximum) |
+## Bit Manipulation
+|  |
+| ------- |
+| [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/TheDev05/LeetCode/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 <!---LeetCode Topics End-->
