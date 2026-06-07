@@ -198,6 +198,7 @@ Love & Peace. 💙
 | [3152-maximum-value-of-an-ordered-triplet-ii](https://github.com/TheDev05/LeetCode/tree/master/3152-maximum-value-of-an-ordered-triplet-ii) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3264-maximum-points-after-enemy-battles](https://github.com/TheDev05/LeetCode/tree/master/3264-maximum-points-after-enemy-battles) |
+| [3289-the-two-sneaky-numbers-of-digitville](https://github.com/TheDev05/LeetCode/tree/master/3289-the-two-sneaky-numbers-of-digitville) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3430-count-days-without-meetings](https://github.com/TheDev05/LeetCode/tree/master/3430-count-days-without-meetings) |
 | [3483-alternating-groups-ii](https://github.com/TheDev05/LeetCode/tree/master/3483-alternating-groups-ii) |
@@ -224,6 +225,7 @@ Love & Peace. 💙
 | [2766-find-the-prefix-common-array-of-two-arrays](https://github.com/TheDev05/LeetCode/tree/master/2766-find-the-prefix-common-array-of-two-arrays) |
 | [2888-minimum-index-of-a-valid-split](https://github.com/TheDev05/LeetCode/tree/master/2888-minimum-index-of-a-valid-split) |
 | [3225-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/TheDev05/LeetCode/tree/master/3225-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3289-the-two-sneaky-numbers-of-digitville](https://github.com/TheDev05/LeetCode/tree/master/3289-the-two-sneaky-numbers-of-digitville) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
@@ -322,6 +324,7 @@ Love & Peace. 💙
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [0445-add-two-numbers-ii](https://github.com/TheDev05/LeetCode/tree/master/0445-add-two-numbers-ii) |
 | [1512-number-of-good-pairs](https://github.com/TheDev05/LeetCode/tree/master/1512-number-of-good-pairs) |
+| [3289-the-two-sneaky-numbers-of-digitville](https://github.com/TheDev05/LeetCode/tree/master/3289-the-two-sneaky-numbers-of-digitville) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3945-digit-frequency-score](https://github.com/TheDev05/LeetCode/tree/master/3945-digit-frequency-score) |
 ## Enumeration
