@@ -202,6 +202,7 @@ Love & Peace. 💙
 | [3483-alternating-groups-ii](https://github.com/TheDev05/LeetCode/tree/master/3483-alternating-groups-ii) |
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/TheDev05/LeetCode/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 | [3619-adjacent-increasing-subarrays-detection-ii](https://github.com/TheDev05/LeetCode/tree/master/3619-adjacent-increasing-subarrays-detection-ii) |
+| [3668-restore-finishing-order](https://github.com/TheDev05/LeetCode/tree/master/3668-restore-finishing-order) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/TheDev05/LeetCode/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 | [3779-eat-pizzas](https://github.com/TheDev05/LeetCode/tree/master/3779-eat-pizzas) |
 ## Hash Table
@@ -224,6 +225,7 @@ Love & Peace. 💙
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
+| [3668-restore-finishing-order](https://github.com/TheDev05/LeetCode/tree/master/3668-restore-finishing-order) |
 | [3945-digit-frequency-score](https://github.com/TheDev05/LeetCode/tree/master/3945-digit-frequency-score) |
 ## Sliding Window
 |  |
