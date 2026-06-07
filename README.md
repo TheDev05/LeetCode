@@ -183,6 +183,7 @@ Love & Peace. 💙
 | [0718-maximum-length-of-repeated-subarray](https://github.com/TheDev05/LeetCode/tree/master/0718-maximum-length-of-repeated-subarray) |
 | [0907-koko-eating-bananas](https://github.com/TheDev05/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/TheDev05/LeetCode/tree/master/1056-capacity-to-ship-packages-within-d-days) |
+| [1512-number-of-good-pairs](https://github.com/TheDev05/LeetCode/tree/master/1512-number-of-good-pairs) |
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/TheDev05/LeetCode/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/TheDev05/LeetCode/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
@@ -216,6 +217,7 @@ Love & Peace. 💙
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [0648-replace-words](https://github.com/TheDev05/LeetCode/tree/master/0648-replace-words) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/TheDev05/LeetCode/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
+| [1512-number-of-good-pairs](https://github.com/TheDev05/LeetCode/tree/master/1512-number-of-good-pairs) |
 | [1533-display-table-of-food-orders-in-a-restaurant](https://github.com/TheDev05/LeetCode/tree/master/1533-display-table-of-food-orders-in-a-restaurant) |
 | [2552-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/TheDev05/LeetCode/tree/master/2552-maximum-sum-of-distinct-subarrays-with-length-k) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/TheDev05/LeetCode/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
@@ -287,6 +289,7 @@ Love & Peace. 💙
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/TheDev05/LeetCode/tree/master/0347-top-k-frequent-elements) |
+| [1512-number-of-good-pairs](https://github.com/TheDev05/LeetCode/tree/master/1512-number-of-good-pairs) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 ## Quickselect
 |  |
@@ -318,6 +321,7 @@ Love & Peace. 💙
 | [0380-insert-delete-getrandom-o1](https://github.com/TheDev05/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [0445-add-two-numbers-ii](https://github.com/TheDev05/LeetCode/tree/master/0445-add-two-numbers-ii) |
+| [1512-number-of-good-pairs](https://github.com/TheDev05/LeetCode/tree/master/1512-number-of-good-pairs) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3945-digit-frequency-score](https://github.com/TheDev05/LeetCode/tree/master/3945-digit-frequency-score) |
 ## Enumeration
