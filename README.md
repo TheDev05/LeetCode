@@ -224,6 +224,7 @@ Love & Peace. 💙
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/TheDev05/LeetCode/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3634-find-mirror-score-of-a-string](https://github.com/TheDev05/LeetCode/tree/master/3634-find-mirror-score-of-a-string) |
+| [3945-digit-frequency-score](https://github.com/TheDev05/LeetCode/tree/master/3945-digit-frequency-score) |
 ## Sliding Window
 |  |
 | ------- |
@@ -316,6 +317,7 @@ Love & Peace. 💙
 | [0398-random-pick-index](https://github.com/TheDev05/LeetCode/tree/master/0398-random-pick-index) |
 | [0445-add-two-numbers-ii](https://github.com/TheDev05/LeetCode/tree/master/0445-add-two-numbers-ii) |
 | [3314-most-frequent-prime](https://github.com/TheDev05/LeetCode/tree/master/3314-most-frequent-prime) |
+| [3945-digit-frequency-score](https://github.com/TheDev05/LeetCode/tree/master/3945-digit-frequency-score) |
 ## Enumeration
 |  |
 | ------- |
